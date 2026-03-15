@@ -1,0 +1,109 @@
+import Link from 'next/link'
+import Image from 'next/image'
+import { prisma } from '@/lib/prisma'
+
+export default async function MegaMenu() {
+  const categories = await prisma.category.findMany({
+    where: { parentId: null },
+    include: { children: true },
+    take: 6,
+  })
+
+  return (
+    <div className="absolute top-full left-1/2 -translate-x-1/2 w-[95vw] max-w-7xl mt-6 bg-zinc-600/95 backdrop-blur-xl shadow-premium ring-1 ring-white/10 rounded-[40px] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-2 transition-all duration-500 z-50 overflow-hidden border border-white/10">
+      <div className="container mx-auto px-12 py-16 grid grid-cols-1 md:grid-cols-5 gap-12">
+        {/* Categories */}
+        <div className="md:col-span-3 grid grid-cols-2 lg:grid-cols-3 gap-10">
+          {categories.map((cat) => (
+            <div key={cat.id} className="space-y-6">
+              <Link 
+                href={`/catalog/${cat.slug}`}
+                className="text-white font-serif text-xl block hover:text-accent transition-all hover:translate-x-1 uppercase tracking-tight"
+              >
+                {cat.name}
+              </Link>
+              <ul className="space-y-3 border-l border-white/10 pl-4">
+                {cat.children.slice(0, 5).map((sub) => (
+                  <li key={sub.id}>
+                    <Link 
+                      href={`/catalog/${sub.slug}`}
+                      className="text-[11px] uppercase tracking-widest text-zinc-200 hover:text-accent transition-all flex items-center gap-2 group/item"
+                    >
+                      <div className="w-1 h-1 rounded-full bg-white/20 group-hover/item:bg-accent transition-colors"></div>
+                      {sub.name}
+                    </Link>
+                  </li>
+                ))}
+                {cat.children.length > 5 && (
+                  <li className="pt-2">
+                    <Link href={`/catalog/${cat.slug}`} className="text-[10px] text-accent font-bold hover:text-white transition-colors uppercase tracking-widest flex items-center gap-1">
+                      Смотреть все <span className="text-[12px]">→</span>
+                    </Link>
+                  </li>
+                )}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Services */}
+        <div className="border-l pl-12 border-white/10 space-y-8">
+          <h3 className="text-white font-serif text-xl uppercase tracking-tight">Сервис</h3>
+          <ul className="space-y-6">
+            <li>
+              <Link href="/b2b" className="group flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-accent transition-colors text-white">
+                  <span className="font-serif italic text-lg">B</span>
+                </div>
+                <div>
+                  <span className="block font-bold text-[11px] uppercase tracking-widest text-white group-hover:text-accent transition-colors">B2B Кабинет</span>
+                  <span className="text-[10px] text-white/50 uppercase tracking-tighter">Спецусловия для профи</span>
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link href="/projects" className="group flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-accent transition-colors text-white">
+                  <span className="font-serif italic text-lg">P</span>
+                </div>
+                <div>
+                  <span className="block font-bold text-[11px] uppercase tracking-widest text-white group-hover:text-accent transition-colors">Мои Сметы</span>
+                  <span className="text-[10px] text-white/50 uppercase tracking-tighter">Управление проектами</span>
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link href="/shipping" className="group flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-accent transition-colors text-white">
+                  <span className="font-serif italic text-lg">S</span>
+                </div>
+                <div>
+                  <span className="block font-bold text-[11px] uppercase tracking-widest text-white group-hover:text-accent transition-colors">Доставка</span>
+                  <span className="text-[10px] text-white/50 uppercase tracking-tighter">По всему Казахстану</span>
+                </div>
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Promo */}
+        <div className="relative overflow-hidden rounded-[30px] bg-white/5 text-white p-10 flex flex-col justify-end min-h-[350px] group border border-white/10 self-start">
+          <Image 
+            src="https://images.unsplash.com/photo-1620627812624-38308872e690?q=80&w=600"
+            alt="Promo"
+            fill
+            className="object-cover opacity-40 group-hover:scale-110 transition-transform duration-1000"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-600 via-zinc-600/20 to-transparent"></div>
+          <div className="relative z-10">
+            <span className="text-accent text-[9px] uppercase tracking-widest font-bold mb-2 block">New Arrival</span>
+            <h4 className="font-serif text-xl mb-4 italic leading-tight">Коллекция Artis от Villeroy & Boch</h4>
+            <Link href="/catalog/sinks" className="inline-block text-[10px] uppercase tracking-widest border-b border-accent pb-1 hover:text-accent transition-colors font-bold">
+              Подробнее
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

@@ -1,0 +1,135 @@
+// prisma/schema.prisma
+datasource db {
+  provider = "sqlite" // Для MVP используем SQLite
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+}
+
+model SiteSettings {
+  id            String   @id @default("global")
+  headerPhone   String?
+  footerAbout   String?
+  footerEmail   String?
+  footerAddress String?
+  updatedAt     DateTime @updatedAt
+}
+
+model HeroSlide {
+  id          String   @id @default(uuid())
+  title       String
+  subtitle    String
+  tagline     String
+  image       String
+  buttonText  String
+  link        String
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+}
+
+model Category {
+  id        String     @id @default(uuid())
+  name      String
+  slug      String     @unique
+  parentId  String?
+  parent    Category?  @relation("CategoryToCategory", fields: [parentId], references: [id])
+  children  Category[] @relation("CategoryToCategory")
+  products  Product[]
+}
+
+model Brand {
+  id        String    @id @default(uuid())
+  name      String
+  slug      String    @unique
+  products  Product[]
+}
+
+model Product {
+  id            String   @id @default(uuid())
+  name          String
+  slug          String   @unique
+  description   String
+  brandId       String
+  brand         Brand    @relation(fields: [brandId], references: [id])
+  categoryId    String
+  category      Category @relation(fields: [categoryId], references: [id])
+  attributes    String   // В SQLite Prisma не поддерживает Json, используем String для JSON-строки
+  isBulky       Boolean  @default(false) 
+  isB2BOnly     Boolean  @default(false) 
+  variants      ProductVariant[]
+  media         Media[]
+  relatedFrom   ProductRelation[] @relation("ProductFrom")
+  relatedTo     ProductRelation[] @relation("ProductTo")
+}
+
+model ProductVariant {
+  id          String   @id @default(uuid())
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id])
+  sku         String   @unique
+  price       Decimal 
+  b2bPrice    Decimal?
+  stock       Int      @default(0)
+  options     String   // JSON-строка атрибутов вариации
+}
+
+model Media {
+  id          String   @id @default(uuid())
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id])
+  url         String
+  type        String   // 'IMAGE', 'VIDEO', 'MODEL_3D', 'BIM', 'PDF_MANUAL'
+  isPrimary   Boolean  @default(false)
+}
+
+model ProductRelation {
+  id          String   @id @default(uuid())
+  fromId      String
+  toId        String
+  type        String   // 'CROSS_SELL', 'UP_SELL', 'REQUIRED_PART'
+  fromProduct Product  @relation("ProductFrom", fields: [fromId], references: [id])
+  toProduct   Product  @relation("ProductTo", fields: [toId], references: [id])
+}
+
+model User {
+  id            String   @id @default(uuid())
+  email         String   @unique
+  passwordHash  String
+  role          String   @default("B2C") // 'B2C', 'B2B_CONTRACTOR'
+  companyInfo   String?  // JSON-строка
+  orders        Order[]
+  projects      Project[]
+}
+
+model Project {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  name        String
+  items       String   // JSON-строка
+  createdAt   DateTime @default(now())
+}
+
+model Order {
+  id               String   @id @default(uuid())
+  userId           String?
+  user             User?    @relation(fields: [userId], references: [id])
+  totalAmount      Decimal
+  status           String   // 'PENDING', 'PAID', 'SHIPPING_BULKY', 'DELIVERED'
+  requiresLift     Boolean  @default(false)
+  hasElevator      Boolean  @default(true)
+  requiresAssembly Boolean  @default(false)
+  items            OrderItem[]
+}
+
+model OrderItem {
+  id          String   @id @default(uuid())
+  orderId     String
+  order       Order    @relation(fields: [orderId], references: [id])
+  variantSku  String
+  quantity    Int
+  priceAtBuy  Decimal
+}
