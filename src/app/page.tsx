@@ -45,7 +45,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
     'price-desc': { name: 'desc' },
   }
 
-  const [products, slides] = await Promise.all([
+  const [productsRaw, slides] = await Promise.all([
     prisma.product.findMany({
       where,
       include: {
@@ -57,11 +57,14 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       take: 12,
       orderBy: sortOptions[sort] || { name: 'asc' }
     }),
-    prisma.heroSlide.findMany({
+    (prisma as any).heroSlide ? (prisma as any).heroSlide.findMany({
       where: { isActive: true },
       orderBy: { order: 'asc' }
-    })
+    }) : Promise.resolve([])
   ])
+
+  // Сериализуем Decimal в числа, чтобы Next.js мог передать их в клиентские компоненты
+  const products = JSON.parse(JSON.stringify(productsRaw))
 
   return (
     <div className="flex flex-col font-sans">

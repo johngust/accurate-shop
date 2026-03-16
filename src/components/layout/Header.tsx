@@ -2,8 +2,15 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Search, ShoppingBag, User, Heart, Menu } from 'lucide-react'
 import MegaMenu from './MegaMenu'
+import { prisma } from '@/lib/prisma'
 
-export default function Header() {
+export default async function Header() {
+  const categories = await prisma.category.findMany({
+    where: { parentId: null },
+    include: { children: true },
+    take: 6,
+  })
+
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
       {/* Upper bar */}
@@ -32,12 +39,7 @@ export default function Header() {
 
         {/* Nav */}
         <nav className="hidden lg:flex items-center gap-10 font-bold uppercase tracking-widest text-[11px]">
-          <div className="group py-7">
-            <button className="flex items-center gap-1 text-primary hover:text-accent transition-colors cursor-pointer">
-              Каталог
-            </button>
-            <MegaMenu />
-          </div>
+          <MegaMenu categories={categories} />
           <Link href="/collections" className="text-primary hover:text-accent transition-colors">Коллекции</Link>
           <Link href="/projects" className="text-primary hover:text-accent transition-colors">Сметы</Link>
         </nav>

@@ -2,9 +2,9 @@ import { prisma } from '@/lib/prisma';
 import HeroSliderClient from './HeroSliderClient';
 
 export default async function HeroSliderPage() {
-  const slides = await prisma.heroSlide.findMany({
-    orderBy: { order: 'asc' },
-  });
+  const slides = (prisma as any).heroSlide 
+    ? await (prisma as any).heroSlide.findMany({ orderBy: { order: 'asc' } })
+    : [];
 
   return (
     <div className="space-y-6">

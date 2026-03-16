@@ -70,6 +70,33 @@
   to { transform: scale(1.1); }
 }
 
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes progress-bar {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(-30%); }
+  100% { transform: translateX(0); }
+}
+
 .animate-slow-zoom {
   animation: slow-zoom 20s infinite alternate ease-in-out;
+}
+
+.animate-page-in {
+  animation: page-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.loading-bar {
+  height: 2px;
+  background: var(--color-accent);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  transform-origin: left;
+  animation: progress-bar 2s ease-in-out infinite;
 }

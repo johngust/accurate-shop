@@ -34,7 +34,7 @@ export default async function CatalogPage({ params, searchParams }: CatalogPageP
     'price-desc': { name: 'desc' },
   }
 
-  const products = await prisma.product.findMany({
+  const productsRaw = await prisma.product.findMany({
     where,
     include: {
       brand: true,
@@ -44,6 +44,8 @@ export default async function CatalogPage({ params, searchParams }: CatalogPageP
     },
     orderBy: sortOptions[sort] || { name: 'asc' }
   })
+
+  const products = JSON.parse(JSON.stringify(productsRaw))
 
   const category = await prisma.category.findUnique({
     where: { slug: categorySlug }

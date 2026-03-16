@@ -1,63 +1,107 @@
 import { prisma } from '@/lib/prisma'
+import ProductCard from '@/components/ui/ProductCard'
+import FilterSidebar from '@/components/layout/FilterSidebar'
 import Link from 'next/link'
-import Image from 'next/image'
-import { ChevronRight } from 'lucide-react'
+import { ChevronRight, SlidersHorizontal } from 'lucide-react'
 
-export default async function AllCategoriesPage() {
-  const categories = await prisma.category.findMany({
-    where: { parentId: null },
-    include: {
-      children: true,
-      _count: {
-        select: { products: true }
+interface AllProductsCatalogProps {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export default async function AllProductsCatalog({ searchParams }: AllProductsCatalogProps) {
+  const sParams = await searchParams
+
+  const brandsFilter = typeof sParams.brands === 'string' ? sParams.brands.split(',') : []
+  const minPrice = typeof sParams.minPrice === 'string' ? Number(sParams.minPrice) : undefined
+  const maxPrice = typeof sParams.maxPrice === 'string' ? Number(sParams.maxPrice) : undefined
+  const sort = typeof sParams.sort === 'string' ? sParams.sort : 'popular'
+
+  // Build where clause
+  const where: any = {}
+
+  if (brandsFilter.length > 0) {
+    where.brand = { slug: { in: brandsFilter } }
+  }
+
+  if (minPrice !== undefined || maxPrice !== undefined) {
+    where.variants = {
+      some: {
+        price: {
+          gte: minPrice,
+          lte: maxPrice
+        }
       }
     }
+  }
+
+  const sortOptions: any = {
+    'popular': { name: 'asc' },
+    'newest': { id: 'desc' },
+    'price-asc': { name: 'asc' }, 
+    'price-desc': { name: 'desc' },
+  }
+
+  const productsRaw = await prisma.product.findMany({
+    where,
+    include: {
+      brand: true,
+      media: true,
+      variants: true,
+      category: true
+    },
+    orderBy: sortOptions[sort] || { name: 'asc' }
   })
 
+  const products = JSON.parse(JSON.stringify(productsRaw))
+
   return (
-    <div className="bg-surface min-h-screen py-20">
-      <div className="container mx-auto px-6">
-        <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-gray-400 mb-12">
-          <Link href="/" className="hover:text-primary transition-colors">Главная</Link>
-          <ChevronRight className="w-3 h-3" />
-          <span className="text-primary font-medium">Каталог</span>
+    <div className="bg-surface min-h-screen">
+      {/* Breadcrumbs */}
+      <div className="container mx-auto px-6 py-6 flex items-center gap-2 text-[10px] uppercase tracking-widest text-gray-400">
+        <Link href="/" className="hover:text-primary transition-colors">Главная</Link>
+        <ChevronRight className="w-3 h-3" />
+        <span className="text-primary font-medium">Полный каталог</span>
+      </div>
+
+      <div className="container mx-auto px-6 pb-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-gray-100 pb-12">
+          <div className="max-w-2xl">
+            <h1 className="font-serif text-6xl text-primary mb-6 leading-tight uppercase tracking-tight">
+              Полный <span className="italic text-accent">каталог</span>
+            </h1>
+            <p className="text-gray-500 text-sm leading-relaxed font-light uppercase tracking-wider">
+              Исследуйте наш полный ассортимент премиальной сантехники. От изысканных смесителей до роскошных ванн — всё для создания вашего идеального пространства.
+            </p>
+          </div>
+          <div className="flex items-center gap-4 text-[10px] uppercase tracking-widest text-gray-400 font-bold bg-white px-6 py-3 rounded-full shadow-sm border border-gray-50">
+            <span>Найдено решений: <span className="text-primary font-black">{products.length}</span></span>
+          </div>
         </div>
 
-        <h1 className="font-serif text-6xl text-primary mb-16 uppercase tracking-tight">Полный <span className="italic text-accent">каталог</span></h1>
+        <div className="flex gap-12">
+          {/* Фильтры */}
+          <FilterSidebar />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {categories.map((cat) => (
-            <div key={cat.id} className="group">
-              <Link href={`/catalog/${cat.slug}`} className="block relative aspect-[16/9] rounded-3xl overflow-hidden mb-6 bg-white border border-gray-100 shadow-sm group-hover:shadow-xl transition-all">
-                <div className="absolute inset-0 flex items-center justify-center p-12">
-                   {/* Placeholder for category icon/image */}
-                   <h2 className="font-serif text-3xl text-primary uppercase text-center group-hover:text-accent transition-colors">{cat.name}</h2>
-                </div>
-                <div className="absolute bottom-6 right-8">
-                  <span className="text-[10px] uppercase tracking-widest font-bold text-gray-400">{cat._count.products} товаров</span>
-                </div>
-              </Link>
-              
-              <ul className="space-y-4 pl-4 border-l border-gray-100">
-                {cat.children.map((sub) => (
-                  <li key={sub.id}>
-                    <Link 
-                      href={`/catalog/${sub.slug}`}
-                      className="text-[11px] uppercase tracking-[0.2em] text-gray-500 hover:text-accent transition-colors flex items-center gap-2"
-                    >
-                      <div className="w-1.5 h-1.5 rounded-full bg-gray-200"></div>
-                      {sub.name}
-                    </Link>
-                  </li>
+          {/* Сетка товаров */}
+          <div className="flex-grow">
+            {/* Mobile filter trigger */}
+            <button className="lg:hidden w-full mb-8 flex items-center justify-center gap-2 py-4 border border-gray-200 rounded-xl text-[10px] uppercase tracking-widest font-medium text-primary bg-white shadow-sm">
+              <SlidersHorizontal className="w-4 h-4" /> Параметры
+            </button>
+
+            {products.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 gap-y-12">
+                {products.map((product) => (
+                  <ProductCard key={product.id} product={product as any} />
                 ))}
-                <li>
-                  <Link href={`/catalog/${cat.slug}`} className="text-[10px] text-accent font-bold uppercase tracking-widest hover:underline">
-                    Смотреть все в {cat.name}
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          ))}
+              </div>
+            ) : (
+              <div className="text-center py-40 border-2 border-dashed border-gray-100 rounded-[40px] bg-white/50 backdrop-blur-sm">
+                <p className="text-gray-400 font-serif text-2xl italic">К сожалению, по вашему запросу ничего не найдено</p>
+                <Link href="/catalog" className="inline-block mt-8 bg-primary text-white px-10 py-4 rounded-xl uppercase tracking-widest text-[10px] font-bold hover:bg-accent transition-all shadow-xl">Сбросить фильтры</Link>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
