@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Plus, Trash2, Edit2, Check, X, GripVertical, Power } from 'lucide-react';
+import ImageUpload from '@/components/admin/ImageUpload';
 
 interface HeroSlide {
   id: string;
@@ -169,15 +170,13 @@ export default function HeroSliderClient({ initialSlides }: { initialSlides: Her
                     />
                   </div>
                 </div>
-                <div>
-                  <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">URL изображения</label>
-                  <input
-                    type="text"
-                    value={formData.image || ''}
-                    onChange={e => setFormData({ ...formData, image: e.target.value })}
-                    className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-blue-500"
-                  />
-                </div>
+                
+                <ImageUpload 
+                  label="Изображение баннера"
+                  value={formData.image || ''} 
+                  onChange={(url) => setFormData({ ...formData, image: url })} 
+                />
+
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Текст кнопки</label>
@@ -304,15 +303,13 @@ export default function HeroSliderClient({ initialSlides }: { initialSlides: Her
                   />
                 </div>
               </div>
-              <div>
-                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">URL изображения</label>
-                <input
-                  type="text"
-                  value={formData.image || ''}
-                  onChange={e => setFormData({ ...formData, image: e.target.value })}
-                  className="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-blue-500"
-                />
-              </div>
+              
+              <ImageUpload 
+                label="Изображение баннера"
+                value={formData.image || ''} 
+                onChange={(url) => setFormData({ ...formData, image: url })} 
+              />
+
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Текст кнопки</label>

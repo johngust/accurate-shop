@@ -15,6 +15,7 @@ import {
   ChevronRight,
   Bell,
   Images,
+  Zap,
 } from 'lucide-react';
 
 const navItems = [
@@ -24,6 +25,7 @@ const navItems = [
   { href: '/admin/categories', label: 'Категории', icon: FolderTree },
   { href: '/admin/brands', label: 'Бренды', icon: Tag },
   { href: '/admin/hero-slider', label: 'Слайдер', icon: Images },
+  { href: '/admin/deals', label: 'Товары дня', icon: Zap },
   { href: '/admin/users', label: 'Пользователи', icon: Users },
   { href: '/admin/settings', label: 'Информация', icon: Settings },
 ];

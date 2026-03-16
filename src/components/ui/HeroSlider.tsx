@@ -55,7 +55,7 @@ export default function HeroSlider({ slides }: { slides?: HeroSlide[] }) {
   if (promos.length === 0) return null
 
   return (
-    <section className="relative h-[50vh] flex items-center overflow-hidden bg-zinc-900 group">
+    <section className="relative h-[70vh] flex items-center overflow-hidden bg-zinc-900 group">
       {promos.map((promo, index) => (
         <div 
           key={promo.id || index}
@@ -67,6 +67,7 @@ export default function HeroSlider({ slides }: { slides?: HeroSlide[] }) {
               alt={promo.title}
               fill
               className="object-cover opacity-50 grayscale"
+              style={{ objectPosition: '50% 70%' }}
               priority={index === 0}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-zinc-900 via-zinc-900/40 to-transparent"></div>

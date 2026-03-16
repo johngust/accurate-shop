@@ -7,6 +7,7 @@ import ProductSlider from '@/components/ui/ProductSlider'
 import FilterSidebar from '@/components/layout/FilterSidebar'
 import ProductCard from '@/components/ui/ProductCard'
 import HeroSlider from '@/components/ui/HeroSlider'
+import DealsSection from '@/components/ui/DealsSection'
 
 interface HomePageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
@@ -45,7 +46,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
     'price-desc': { name: 'desc' },
   }
 
-  const [productsRaw, slides] = await Promise.all([
+  const [productsRaw, slides, deals] = await Promise.all([
     prisma.product.findMany({
       where,
       include: {
@@ -60,17 +61,29 @@ export default async function HomePage({ searchParams }: HomePageProps) {
     (prisma as any).heroSlide ? (prisma as any).heroSlide.findMany({
       where: { isActive: true },
       orderBy: { order: 'asc' }
+    }) : Promise.resolve([]),
+    (prisma as any).dealOfTheDay ? (prisma as any).dealOfTheDay.findMany({
+      where: { isActive: true },
+      include: {
+        product: {
+          include: { brand: true, media: true, variants: true }
+        }
+      },
+      take: 2
     }) : Promise.resolve([])
   ])
 
   // Сериализуем Decimal в числа, чтобы Next.js мог передать их в клиентские компоненты
   const products = JSON.parse(JSON.stringify(productsRaw))
+  const serializedDeals = JSON.parse(JSON.stringify(deals || []))
 
   return (
     <div className="flex flex-col font-sans">
       <HeroSlider slides={slides} />
+      
+      <DealsSection deals={serializedDeals} />
 
-      <div className="container mx-auto px-6 py-20">
+      <div className="container mx-auto px-6 py-20 max-w-[1920px]">
         <div className="flex gap-12">
           {/* Фильтры */}
           <FilterSidebar />
@@ -83,7 +96,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
               {products.map((product) => (
                 <ProductCard key={product.id} product={product as any} />
               ))}
