@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Plus, Trash2, Check, X, Search, Clock, Tag, Edit2, Calendar } from 'lucide-react';
+import { Plus, Trash2, Check, X, Search, Clock, Tag, Edit2, Calendar, Zap } from 'lucide-react';
 import Image from 'next/image';
 
 interface Deal {

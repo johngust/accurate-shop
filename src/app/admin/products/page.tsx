@@ -25,6 +25,13 @@ interface PageProps {
 
 export default async function AdminProductsPage({ searchParams }: PageProps) {
     const params = await searchParams;
+
+    // Преобразование в плоский объект для Pagination
+    const queryParams: Record<string, string> = {};
+    Object.entries(params).forEach(([key, value]) => {
+        if (typeof value === 'string') queryParams[key] = value;
+    });
+
     const page = Number(params.page) || 1;
     const pageSize = 10;
     const query = (params.q as string) || '';
@@ -159,7 +166,7 @@ export default async function AdminProductsPage({ searchParams }: PageProps) {
                     </div>
                     
                     <div className="bg-gray-950 px-4 py-4 border-t border-gray-800">
-                        <Pagination totalPages={totalPages} currentPage={page} queryParams={params} />
+                        <Pagination totalPages={totalPages} currentPage={page} queryParams={queryParams} baseUrl="/admin/products" />
                     </div>
                 </div>
             </div>
