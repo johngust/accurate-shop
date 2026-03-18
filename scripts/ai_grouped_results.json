@@ -1,0 +1,1306 @@
+[
+  {
+    "name": "M Колено комплект / к А",
+    "brand": "Alca Plast",
+    "image": "/uploads/products/AI_V12_M906.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "M906",
+        "price": 4700.0,
+        "stock": 25,
+        "size": "906 "
+      }
+    ]
+  },
+  {
+    "name": "M соединитель комплект для  А, А",
+    "brand": "Alca Plast",
+    "image": "/uploads/products/AI_V12_M907.jpg",
+    "category": "Мебель для ванной-Тумбы с раковиной",
+    "variants": [
+      {
+        "sku": "M907",
+        "price": 4300.0,
+        "stock": 16,
+        "size": "907 "
+      }
+    ]
+  },
+  {
+    "name": "WCМ Набор с боковой подводкой /\", шток, металлизированная ручка эконом ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_WC4050M.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "WC4050M",
+        "price": 2710.0,
+        "stock": 274,
+        "size": "4050"
+      }
+    ]
+  },
+  {
+    "name": "WC Арматура боковая /\" пластик эконом ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_WC5050.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "WC5050",
+        "price": 1060.0,
+        "stock": 79,
+        "size": "5050 "
+      }
+    ]
+  },
+  {
+    "name": "WCM Набор с боковой подводкой / с пластиковым штуцером, кнопка металл, эконом ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_WC6050M.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "WC6050M",
+        "price": 2170.0,
+        "stock": 1274,
+        "size": "6050M"
+      }
+    ]
+  },
+  {
+    "name": "WCM Набор с нижней подводкой /\" с пластиковым штуцером,кнопка металлизированн, эконом ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_WC6550M.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "WC6550M",
+        "price": 2170.0,
+        "stock": 388,
+        "size": "6550M"
+      }
+    ]
+  },
+  {
+    "name": "WCM Арматура спускная кнопка металл. эконом ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_WC7030M.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "WC7030M",
+        "price": 2080.0,
+        "stock": 3,
+        "size": "7030M"
+      }
+    ]
+  },
+  {
+    "name": "A  Сифон Ани Грот  /х, с гибк.трубой х (ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_A0110.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "A0110",
+        "price": 2210.0,
+        "stock": 281,
+        "size": "0110 "
+      }
+    ]
+  },
+  {
+    "name": "A S Сифон Ани Грот  / * с переливом ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_A0145S.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "A0145S",
+        "price": 5990.0,
+        "stock": 204,
+        "size": "0145S"
+      }
+    ]
+  },
+  {
+    "name": "A  Сифон Ани Грот  /\"* с гибкой трубой х",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_A0510.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "A0510",
+        "price": 2290.0,
+        "stock": 334,
+        "size": "0510 "
+      }
+    ]
+  },
+  {
+    "name": "A  Сифон Ани Грот  /х, с  отв. стир/.м с г/т х ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_A1110.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "A1110",
+        "price": 2750.0,
+        "stock": 705,
+        "size": "1110 "
+      }
+    ]
+  },
+  {
+    "name": "A  Сифон Ани Грот  /х, с отводом стир.маш. и с гиб. ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_A2010.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "A2010",
+        "price": 2190.0,
+        "stock": 357,
+        "size": "2010 "
+      },
+      {
+        "sku": "A2015",
+        "price": 2240.0,
+        "stock": 6,
+        "size": "2015 "
+      }
+    ]
+  },
+  {
+    "name": "A  Сифон Ани Грот двойной с отводом ст.машины ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_A3500.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "A3500",
+        "price": 3620.0,
+        "stock": 937,
+        "size": "3500 "
+      }
+    ]
+  },
+  {
+    "name": "C Сифон Ани Грот  /х",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_C0100.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "C0100",
+        "price": 1760.0,
+        "stock": 555,
+        "size": "0100 "
+      }
+    ]
+  },
+  {
+    "name": "C  Сифон Ани  /х, с гибкой трубой х ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_C0110.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "C0110",
+        "price": 2190.0,
+        "stock": 229,
+        "size": "0110 "
+      },
+      {
+        "sku": "C0510",
+        "price": 1540.0,
+        "stock": 5708,
+        "size": "0510 "
+      },
+      {
+        "sku": "C1010",
+        "price": 2350.0,
+        "stock": 210,
+        "size": "1010 "
+      }
+    ]
+  },
+  {
+    "name": "C  Сифон Ани   /х, с отводом стир.маш. и с гиб.тр.  ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_C0310.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "C0310",
+        "price": 2420.0,
+        "stock": 122,
+        "size": "0310 "
+      }
+    ]
+  },
+  {
+    "name": "C  Сифон Ани  /х, без горловины",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_C1020.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "C1020",
+        "price": 1030.0,
+        "stock": 172,
+        "size": "1020 "
+      }
+    ]
+  },
+  {
+    "name": "C Варяг сифон для ванны с г/т х ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_C6155.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "C6155",
+        "price": 1820.0,
+        "stock": 2641,
+        "size": "6155 "
+      }
+    ]
+  },
+  {
+    "name": "C Варяг сифон для ванны регулируемый с г/т х -  ш/к",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_C6255.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "C6255",
+        "price": 2090.0,
+        "stock": 1774,
+        "size": "6255 "
+      }
+    ]
+  },
+  {
+    "name": "E  Сифон Ани для душ поддона  /* с г/т * ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_E115.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "E115",
+        "price": 1660.0,
+        "stock": 254,
+        "size": "115 "
+      }
+    ]
+  },
+  {
+    "name": "E  Сифон Ани д/ван.с вып. пер. с гибкой трубой х ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_E155.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "E155",
+        "price": 3150.0,
+        "stock": 544,
+        "size": "155 "
+      }
+    ]
+  },
+  {
+    "name": "E  Сифон для душевого поддона регулируемый с гибкой трубой х  ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_E215.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "E215",
+        "price": 1760.0,
+        "stock": 300,
+        "size": "215 "
+      }
+    ]
+  },
+  {
+    "name": "E  Сифон Ани для ванны регулируемый с выпуском и переливом  /\" с гибкой трубой х  ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_E255.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "E255",
+        "price": 3150.0,
+        "stock": 584,
+        "size": "255 "
+      }
+    ]
+  },
+  {
+    "name": "EC Сифон для душевого поддона /* (хром) ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_E320C.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "E320C",
+        "price": 5180.0,
+        "stock": 144,
+        "size": "320"
+      }
+    ]
+  },
+  {
+    "name": "EM  перелив полуавтомат с сифоном прямоточный  мм ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_EM311.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "EM311",
+        "price": 12690.0,
+        "stock": 237,
+        "size": "311 "
+      }
+    ]
+  },
+  {
+    "name": "EM  Перелив п/а с сифоном регулируемый  мм",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_EM321.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "EM321",
+        "price": 11540.0,
+        "stock": 93,
+        "size": "321 "
+      }
+    ]
+  },
+  {
+    "name": "EM  Перелив п/а с сифоном \"Бриг\"  мм (металл) ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_EM361.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "EM361",
+        "price": 12190.0,
+        "stock": 141,
+        "size": "361 "
+      }
+    ]
+  },
+  {
+    "name": "EM  Перелив п/а с сифоном плоский мм (металл)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_EM601.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "EM601",
+        "price": 13840.0,
+        "stock": 29,
+        "size": "601 "
+      }
+    ]
+  },
+  {
+    "name": "EM перелив п/а   мм ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_EM301.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "EM301",
+        "price": 11770.0,
+        "stock": 89,
+        "size": "301 "
+      }
+    ]
+  },
+  {
+    "name": "EM  Перелив п/а  мм",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_EM401.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "EM401",
+        "price": 7170.0,
+        "stock": 76,
+        "size": "401  "
+      }
+    ]
+  },
+  {
+    "name": "EM Перелив п/а  д/ванны",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_EM511.jpg",
+    "category": "Смесители-Для раковины",
+    "variants": [
+      {
+        "sku": "EM511",
+        "price": 7280.0,
+        "stock": 39,
+        "size": "511 "
+      }
+    ]
+  },
+  {
+    "name": "EM Перелив п/а с сифоном",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_EM521.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "EM521",
+        "price": 7280.0,
+        "stock": 63,
+        "size": "521 "
+      }
+    ]
+  },
+  {
+    "name": "EM Перелив-автомат  д/ванны",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_EM611.jpg",
+    "category": "Санфаянс-Унитазы",
+    "variants": [
+      {
+        "sku": "EM611",
+        "price": 13840.0,
+        "stock": 79,
+        "size": "611 "
+      }
+    ]
+  },
+  {
+    "name": "Адаптерное кольцо с круглым вертикальным переливом  мм (NSR)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_N420SR2.jpg",
+    "category": "Смесители-Для раковины",
+    "variants": [
+      {
+        "sku": "N420SR2",
+        "price": 1740.0,
+        "stock": 1,
+        "size": "27 мм"
+      }
+    ]
+  },
+  {
+    "name": "G  Сифон гофрированный  /х/ ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_G106.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "G106",
+        "price": 1670.0,
+        "stock": 1678,
+        "size": "106 "
+      },
+      {
+        "sku": "G206",
+        "price": 1670.0,
+        "stock": 742,
+        "size": "206 "
+      }
+    ]
+  },
+  {
+    "name": "G  Сифон гофрированный удлин.  /х/ ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_G116.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "G116",
+        "price": 1250.0,
+        "stock": 6443,
+        "size": "116 "
+      },
+      {
+        "sku": "G216",
+        "price": 1840.0,
+        "stock": 659,
+        "size": "216 "
+      }
+    ]
+  },
+  {
+    "name": "G  Сифон гофрированный удлиненный  /*/ с отводом для стиральной машины ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_G118.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "G118",
+        "price": 2030.0,
+        "stock": 844,
+        "size": "118 "
+      }
+    ]
+  },
+  {
+    "name": "G  Сифон гофрированный  /х ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_G204.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "G204",
+        "price": 1800.0,
+        "stock": 270,
+        "size": "204 "
+      }
+    ]
+  },
+  {
+    "name": "G  Гофросифон х/ удлиненный ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_G716.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "G716",
+        "price": 1200.0,
+        "stock": 652,
+        "size": "716 "
+      }
+    ]
+  },
+  {
+    "name": "K  Гибкая труба  /х/ ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_K106.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "K106",
+        "price": 720.0,
+        "stock": 290,
+        "size": "106 "
+      },
+      {
+        "sku": "K206",
+        "price": 720.0,
+        "stock": 32,
+        "size": "206 "
+      }
+    ]
+  },
+  {
+    "name": "K  Гибкая труба  /х/ удлиненная ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_K116.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "K116",
+        "price": 1080.0,
+        "stock": 108,
+        "size": "116 "
+      },
+      {
+        "sku": "K216",
+        "price": 1060.0,
+        "stock": 370,
+        "size": "216 "
+      }
+    ]
+  },
+  {
+    "name": "K  Удлинитель гибкий для унитаза с черной гребенкой",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_K518.jpg",
+    "category": "Санфаянс-Унитазы",
+    "variants": [
+      {
+        "sku": "K518",
+        "price": 4250.0,
+        "stock": 4,
+        "size": "518 "
+      }
+    ]
+  },
+  {
+    "name": "K  Удлинитель гибкий для унитаза с белой гребенкой",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_K528.jpg",
+    "category": "Санфаянс-Унитазы",
+    "variants": [
+      {
+        "sku": "K528",
+        "price": 5200.0,
+        "stock": 7,
+        "size": "528 "
+      }
+    ]
+  },
+  {
+    "name": "K  Удлинитель гибкий для унитаза с выпуском  мм ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_K821.jpg",
+    "category": "Санфаянс-Унитазы",
+    "variants": [
+      {
+        "sku": "K821",
+        "price": 2090.0,
+        "stock": 545,
+        "size": "821 "
+      }
+    ]
+  },
+  {
+    "name": "K  Удлинитель гибкий для унитаза диаметр мм  ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_K828.jpg",
+    "category": "Санфаянс-Унитазы",
+    "variants": [
+      {
+        "sku": "K828",
+        "price": 1110.0,
+        "stock": 20833,
+        "size": "828 "
+      }
+    ]
+  },
+  {
+    "name": "N S Гибкий перелив Ани для мойки  / с прямоугольным вертикальным корпусом ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_N305S.jpg",
+    "category": "Смесители-Для раковины",
+    "variants": [
+      {
+        "sku": "N305S",
+        "price": 5270.0,
+        "stock": 2,
+        "size": "305S"
+      }
+    ]
+  },
+  {
+    "name": "Сифон для писсуара АНИ Пласт U с горизонтальным выходом  мм",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_U0605.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "U0605",
+        "price": 4790.0,
+        "stock": 49,
+        "size": "0605 "
+      }
+    ]
+  },
+  {
+    "name": "Сифон для писсуара АНИ Пласт U с вертикальным выходом  мм",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_U0705.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "U0705",
+        "price": 4790.0,
+        "stock": 60,
+        "size": "0705 "
+      }
+    ]
+  },
+  {
+    "name": "W  Манжета прямая для унитаза ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_W0210.jpg",
+    "category": "Санфаянс-Унитазы",
+    "variants": [
+      {
+        "sku": "W0210",
+        "price": 1230.0,
+        "stock": 93,
+        "size": "0210 "
+      }
+    ]
+  },
+  {
+    "name": "W  Эксцентрик жесткий  мм ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_W0220.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "W0220",
+        "price": 1550.0,
+        "stock": 105,
+        "size": "0220 "
+      },
+      {
+        "sku": "W0420",
+        "price": 1550.0,
+        "stock": 255,
+        "size": "0420 "
+      }
+    ]
+  },
+  {
+    "name": "W  Эксцентриковая манжета для унитаза ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_W0410.jpg",
+    "category": "Санфаянс-Унитазы",
+    "variants": [
+      {
+        "sku": "W0410",
+        "price": 1270.0,
+        "stock": 160,
+        "size": "0410 "
+      }
+    ]
+  },
+  {
+    "name": "W  Труба фановая  ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_W1218.jpg",
+    "category": "Смесители-Для раковины",
+    "variants": [
+      {
+        "sku": "W1218",
+        "price": 1550.0,
+        "stock": 159,
+        "size": "1218 "
+      }
+    ]
+  },
+  {
+    "name": "W  Труба фановая   ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_W1220.jpg",
+    "category": "Санфаянс-Инсталляции",
+    "variants": [
+      {
+        "sku": "W1220",
+        "price": 2000.0,
+        "stock": 199,
+        "size": "1220 "
+      }
+    ]
+  },
+  {
+    "name": "W  Труба фанов * короткая ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_W1228.jpg",
+    "category": "Санфаянс-Инсталляции",
+    "variants": [
+      {
+        "sku": "W1228",
+        "price": 1960.0,
+        "stock": 3786,
+        "size": "1228 "
+      }
+    ]
+  },
+  {
+    "name": "W  Труба фановая *, град ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_W2220.jpg",
+    "category": "Санфаянс-Инсталляции",
+    "variants": [
+      {
+        "sku": "W2220",
+        "price": 1620.0,
+        "stock": 1464,
+        "size": "2220 "
+      }
+    ]
+  },
+  {
+    "name": "W  Труба фановая *, короткая ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_W2228.jpg",
+    "category": "Санфаянс-Инсталляции",
+    "variants": [
+      {
+        "sku": "W2228",
+        "price": 1960.0,
+        "stock": 3814,
+        "size": "2228 "
+      }
+    ]
+  },
+  {
+    "name": "W  Труба фановая * град ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_W4220.jpg",
+    "category": "Мебель для ванной-Тумбы с раковиной",
+    "variants": [
+      {
+        "sku": "W4220",
+        "price": 1620.0,
+        "stock": 993,
+        "size": "4220 "
+      }
+    ]
+  },
+  {
+    "name": "W  Труба фановая * короткая ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_W4228.jpg",
+    "category": "Санфаянс-Унитазы",
+    "variants": [
+      {
+        "sku": "W4228",
+        "price": 1960.0,
+        "stock": 1692,
+        "size": "4228 "
+      }
+    ]
+  },
+  {
+    "name": "BD Сифон для биде  /х с трубой х/ ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_BD1016.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "BD1016",
+        "price": 2700.0,
+        "stock": 405,
+        "size": "1016 "
+      }
+    ]
+  },
+  {
+    "name": "U Сифон для писсуара с трубой х/ ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_U1016.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "U1016",
+        "price": 2400.0,
+        "stock": 277,
+        "size": "1016 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап вертикальный нерегулируемый с выпуском мм с пластик решеткой х см ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA1210.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "TA1210",
+        "price": 2720.0,
+        "stock": 144,
+        "size": "1210 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап вертикальный нерегулируемый с выпуском мм с нерж решеткой х см ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA1212.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "TA1212",
+        "price": 4690.0,
+        "stock": 103,
+        "size": "1212 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап вертикальный с выпуском  мм, с решеткой из нерж. стали хсм ( шт)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA5202.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "TA5202",
+        "price": 2210.0,
+        "stock": 94,
+        "size": "5202 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап вертикальный нерегулируемый с выпуском мм, с пластик решеткой хсм ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA5204.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "TA5204",
+        "price": 1580.0,
+        "stock": 256,
+        "size": "5204 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап вертикальный нерегулируемый с выпуском  мм, с пласитк решеткой хсм ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA5210.jpg",
+    "category": "Мебель для ванной-Тумбы с раковиной",
+    "variants": [
+      {
+        "sku": "TA5210",
+        "price": 1460.0,
+        "stock": 44,
+        "size": "5210 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап вертикальный нерегулируемый с выпуском  мм, с нерж.решеткой хсм ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA5212.jpg",
+    "category": "Мебель для ванной-Тумбы с раковиной",
+    "variants": [
+      {
+        "sku": "TA5212",
+        "price": 3540.0,
+        "stock": 111,
+        "size": "5212 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап вертикальный регулируемый с выпуском мм, с нерж решеткой х ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA5702.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "TA5702",
+        "price": 5090.0,
+        "stock": 12,
+        "size": "5702 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап вертикальный регулируемый с выпуском мм, с пластик решеткой х ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA5704.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "TA5704",
+        "price": 2180.0,
+        "stock": 385,
+        "size": "5704 "
+      },
+      {
+        "sku": "TA5710",
+        "price": 2700.0,
+        "stock": 69,
+        "size": "5710 "
+      }
+    ]
+  },
+  {
+    "name": "TQ  Трап вертикальный нерегулируемый с выпуском  мм, с нерж решеткой х см, сухой ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TQ1212.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "TQ1212",
+        "price": 5560.0,
+        "stock": 83,
+        "size": "1212 "
+      }
+    ]
+  },
+  {
+    "name": "TQ  Трап вертикальный регулируемый с выпуском  мм, с нерж решеткой х см, сухой ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TQ1712.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "TQ1712",
+        "price": 7840.0,
+        "stock": 28,
+        "size": "1712 "
+      },
+      {
+        "sku": "TQ5702",
+        "price": 5960.0,
+        "stock": 108,
+        "size": "5702 "
+      }
+    ]
+  },
+  {
+    "name": "TQ  Трап верт, выпуск н/р,реш.* нерж.сухой ( шт)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TQ5202.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "TQ5202",
+        "price": 3190.0,
+        "stock": 366,
+        "size": "5202 "
+      }
+    ]
+  },
+  {
+    "name": "TQ  Трап вертикальный нерегулируемый с выпуском  мм, с пласитк решеткой хсм",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TQ5210.jpg",
+    "category": "Мебель для ванной-Тумбы с раковиной",
+    "variants": [
+      {
+        "sku": "TQ5210",
+        "price": 3210.0,
+        "stock": 1220,
+        "size": "5210 "
+      }
+    ]
+  },
+  {
+    "name": "TQ  Трап вертикальный вып.  н/р. реш. * нерж. сухой ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TQ5212.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "TQ5212",
+        "price": 5570.0,
+        "stock": 184,
+        "size": "5212 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап горизонтальный нерегулируемый с выпуском  мм, с пластик решеткой х см. ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA1110.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "TA1110",
+        "price": 2720.0,
+        "stock": 86,
+        "size": "1110 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап горизонтальный нерегулируемый с выпуском  мм, с нерж решеткой х см. ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA1112.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "TA1112",
+        "price": 5620.0,
+        "stock": 42,
+        "size": "1112 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап горизонтальный регулируемый с выпуском  мм, с пласт решеткой х ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA1610.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "TA1610",
+        "price": 6930.0,
+        "stock": 291,
+        "size": "1610 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап горизонтальный регулируемый с выпуском  мм, с нерж решеткой х см. ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA1612.jpg",
+    "category": "Душевая программа-Душевые системы",
+    "variants": [
+      {
+        "sku": "TA1612",
+        "price": 8220.0,
+        "stock": 87,
+        "size": "1612 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап горизонтальный нерегулируемый с выпуском  мм, с пластик решеткой х ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA5104.jpg",
+    "category": "Смесители-Для раковины",
+    "variants": [
+      {
+        "sku": "TA5104",
+        "price": 1580.0,
+        "stock": 298,
+        "size": "5104 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап горизонтальный выпуск  мм, с пласитк решеткой хсм ( шт)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA5110.jpg",
+    "category": "Смесители-Для раковины",
+    "variants": [
+      {
+        "sku": "TA5110",
+        "price": 1730.0,
+        "stock": 127,
+        "size": "5110 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап горизонтальный с выпуском  мм, с решеткой из нерж. стали х ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA5112.jpg",
+    "category": "Смесители-Для раковины",
+    "variants": [
+      {
+        "sku": "TA5112",
+        "price": 3630.0,
+        "stock": 85,
+        "size": "5112 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап горизонтальный регулируемый с выпуском мм, с нерж решеткой х ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA5602.jpg",
+    "category": "Смесители-Для раковины",
+    "variants": [
+      {
+        "sku": "TA5602",
+        "price": 5090.0,
+        "stock": 88,
+        "size": "5602 "
+      },
+      {
+        "sku": "TA5612",
+        "price": 6240.0,
+        "stock": 123,
+        "size": "5612 "
+      }
+    ]
+  },
+  {
+    "name": "TA  Трап горизонтальный регулируемый с выпуском мм, с пластик решеткой х ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TA5604.jpg",
+    "category": "Смесители-Для раковины",
+    "variants": [
+      {
+        "sku": "TA5604",
+        "price": 2370.0,
+        "stock": 238,
+        "size": "5604 "
+      },
+      {
+        "sku": "TA5610",
+        "price": 2740.0,
+        "stock": 92,
+        "size": "5610 "
+      }
+    ]
+  },
+  {
+    "name": "TQ  Трап гориз.вып. н/р.реш. нерж.сухой ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TQ5112.jpg",
+    "category": "Водоотвод-Сифоны",
+    "variants": [
+      {
+        "sku": "TQ5112",
+        "price": 5570.0,
+        "stock": 5,
+        "size": "5112 "
+      }
+    ]
+  },
+  {
+    "name": "TQ  Трап горизонтальный регулируемый с выпуском  мм, с нерж решеткой х см, сухой ( ш/к)",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TQ5602.jpg",
+    "category": "Смесители-Для раковины",
+    "variants": [
+      {
+        "sku": "TQ5602",
+        "price": 5960.0,
+        "stock": 409,
+        "size": "5602 "
+      }
+    ]
+  },
+  {
+    "name": "TLG Трап пластик.лин.вып  реш.нерж.сталь.глянец.Штиль",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TL1165G.jpg",
+    "category": "Санфаянс-Инсталляции",
+    "variants": [
+      {
+        "sku": "TL1165G",
+        "price": 42050.0,
+        "stock": 1,
+        "size": "1165"
+      }
+    ]
+  },
+  {
+    "name": "TLG Трап пластик.лин.вып  реш.нерж.сталь.глянец.Бриз",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TL1365G.jpg",
+    "category": "Санфаянс-Инсталляции",
+    "variants": [
+      {
+        "sku": "TL1365G",
+        "price": 42050.0,
+        "stock": 16,
+        "size": "1365"
+      }
+    ]
+  },
+  {
+    "name": "TLG Трап пластик.лин.вып  реш.нерж.сталь.глянец.Бимс",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TL1485G.jpg",
+    "category": "Санфаянс-Инсталляции",
+    "variants": [
+      {
+        "sku": "TL1485G",
+        "price": 46930.0,
+        "stock": 11,
+        "size": "1485"
+      }
+    ]
+  },
+  {
+    "name": "TLQM Трап пласт.лин.сух.вып  реш.нерж.сталь.матовая.Штиль",
+    "brand": "Ани Пласт",
+    "image": "/uploads/products/AI_V12_TLQ1165M.jpg",
+    "category": "Санфаянс-Инсталляции",
+    "variants": [
+      {
+        "sku": "TLQ1165M",
+        "price": 43000.0,
+        "stock": 5,
+        "size": "1165M"
+      }
+    ]
+  }
+]

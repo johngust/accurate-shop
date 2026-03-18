@@ -13,6 +13,21 @@ const nextConfig: NextConfig = {
         hostname: 'via.placeholder.com',
         pathname: '**',
       },
+      {
+        protocol: 'https',
+        hostname: '**.grohe.com',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.santehnika-online.ru',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.ozone.ru',
+        pathname: '**',
+      },
     ],
   },
 };

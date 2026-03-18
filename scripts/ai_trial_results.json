@@ -1,0 +1,20 @@
+[
+  {
+    "code1C": "212126",
+    "sku": "64130",
+    "name": "Тумба под раковину напольная MELAR 80 для COMO 80 белый",
+    "brand": "Cersanit",
+    "price": 120350.0,
+    "stock": 1,
+    "ai_image": "/uploads/products/AI_V9_64130.jpg"
+  },
+  {
+    "code1C": "15997",
+    "sku": "1P2054S0000BF",
+    "name": "Унитаз-компакт Santeri Прайм белый",
+    "brand": "Santeri",
+    "price": 46000.0,
+    "stock": 21,
+    "ai_image": "/uploads/products/AI_V9_1P2054S0000BF.jpg"
+  }
+]

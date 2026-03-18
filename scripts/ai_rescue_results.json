@@ -1,0 +1,1382 @@
+[
+  {
+    "code1C": "3247",
+    "sku": "A45A",
+    "name": "A45A Сифон для писсуара с манжетой",
+    "brand": "Alca Plast",
+    "price": 3050.0,
+    "stock": 110,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A45A.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A45A",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "209136",
+    "sku": "A507BLACK",
+    "name": "A507BLACK Сифон для ванны CLICK/CLACK, черный-мат",
+    "brand": "Alca Plast",
+    "price": 57400.0,
+    "stock": 1,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A507BLACK.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A507BLACK",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "3248",
+    "sku": "A55K-100",
+    "name": "A55 К 100 см слив- перелив для ванны автомат",
+    "brand": "Alca Plast",
+    "price": 13750.0,
+    "stock": 200,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A55K-100.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A55K-100",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "3249",
+    "sku": "A55K",
+    "name": "A55 К 60 см слив- перелив для ванны автомат",
+    "brand": "Alca Plast",
+    "price": 12200.0,
+    "stock": 480,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A55K.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A55K",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "3250",
+    "sku": "A55K-80",
+    "name": "A55 К 80см слив- перелив для ванны автомат",
+    "brand": "Alca Plast",
+    "price": 13250.0,
+    "stock": 1060,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A55K-80.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A55K-80",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "213101",
+    "sku": "A55ANTIC",
+    "name": "A55ANTIC Сифон для ванны автомат-комплект, бронза-антик",
+    "brand": "Alca Plast",
+    "price": 37650.0,
+    "stock": 43,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A55ANTIC.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A55ANTIC",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "213102",
+    "sku": "A55BLACK",
+    "name": "A55BLACK Сифон для ванны автомат комплект, чёрный-матовый",
+    "brand": "Alca Plast",
+    "price": 46200.0,
+    "stock": 27,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A55BLACK.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A55BLACK",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1408",
+    "sku": "A79",
+    "name": "A79 гибкое соединение 6/4*40 пластмасса",
+    "brand": "Alca Plast",
+    "price": 750.0,
+    "stock": 120,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A79.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A79",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1409",
+    "sku": "A790",
+    "name": "A790 гибкое соединение",
+    "brand": "Alca Plast",
+    "price": 800.0,
+    "stock": 188,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A790.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A790",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "3261",
+    "sku": "A90-22",
+    "name": "A90-22 Колено для унитаза 22 гр",
+    "brand": "Alca Plast",
+    "price": 2450.0,
+    "stock": 14,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A90-22.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A90-22",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI",
+      "Категория": "Санфаянс",
+      "Материал": "Керамика"
+    }
+  },
+  {
+    "code1C": "1410",
+    "sku": "A90-45",
+    "name": "A90-45 Колено для унитаза 45 гр",
+    "brand": "Alca Plast",
+    "price": 2400.0,
+    "stock": 3,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A90-45.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A90-45",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI",
+      "Категория": "Санфаянс",
+      "Материал": "Керамика"
+    }
+  },
+  {
+    "code1C": "3262",
+    "sku": "A91-400",
+    "name": "A91-400 насадка для унитаза 400 мм",
+    "brand": "Alca Plast",
+    "price": 3400.0,
+    "stock": 6,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A91-400.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A91-400",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI",
+      "Категория": "Санфаянс",
+      "Материал": "Керамика"
+    }
+  },
+  {
+    "code1C": "1414",
+    "sku": "A97",
+    "name": "A97 Гофра Гибкая подводка для выпуска унитаза",
+    "brand": "Alca Plast",
+    "price": 3350.0,
+    "stock": 237,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A97.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A97",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI",
+      "Категория": "Санфаянс",
+      "Материал": "Керамика"
+    }
+  },
+  {
+    "code1C": "1416",
+    "sku": "A990",
+    "name": "A990 Манжета для унитаза со смещением",
+    "brand": "Alca Plast",
+    "price": 1100.0,
+    "stock": 102,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A990.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A990",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI",
+      "Категория": "Санфаянс",
+      "Материал": "Керамика"
+    }
+  },
+  {
+    "code1C": "1431",
+    "sku": "APS1",
+    "name": "APS1 Сифон для стиральной машины наружн хром",
+    "brand": "Alca Plast",
+    "price": 2400.0,
+    "stock": 117,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APS1.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APS1",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1476",
+    "sku": "ARV002-BLISTR",
+    "name": "ARV002 BLISTR угловой четырехгранный вентиль",
+    "brand": "Alca Plast",
+    "price": 6050.0,
+    "stock": 91,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_ARV002-BLISTR.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "ARV002-BLISTR",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1479",
+    "sku": "ATS001",
+    "name": "ATS001 Кран писсуарный",
+    "brand": "Alca Plast",
+    "price": 17200.0,
+    "stock": 73,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_ATS001.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "ATS001",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "2751",
+    "sku": "M901",
+    "name": "M901 прокладка подводки+вывод+гофрированная прокладка 45*58*25",
+    "brand": "Alca Plast",
+    "price": 2000.0,
+    "stock": 77,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_M901.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "M901",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "19077",
+    "sku": "P148Z",
+    "name": "P148Z Колено с двумя штуцерами G1\"/17-23 с обратными клапанами",
+    "brand": "Alca Plast",
+    "price": 5700.0,
+    "stock": 8,
+    "ai_status": "Web HQ + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_P148Z.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "P148Z",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "211253",
+    "sku": "A390",
+    "name": "A390 Донный клапан сифона для умыв. click/clack 5/4\", ц-мет. с переливом и большой заглушкой",
+    "brand": "Alca Plast",
+    "price": 11150.0,
+    "stock": 148,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A390.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A390",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1382",
+    "sku": "A391",
+    "name": "A391 Водослив для умывальника click/clack 5/4\", цельнометаллический с малой заглушкой",
+    "brand": "Alca Plast",
+    "price": 9250.0,
+    "stock": 90,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A391.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A391",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "19086",
+    "sku": "A392ANTIC",
+    "name": "A392 ANTIC Донный клапан сифона для умыв. click/clack 5/4\", ц-мет. с переливом и большой загл бронза",
+    "brand": "Alca Plast",
+    "price": 20600.0,
+    "stock": 62,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A392ANTIC.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A392ANTIC",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "209137",
+    "sku": "A392BLACK",
+    "name": "A392 BLACK Донный клапан сифона для умыв. click/clack 5/4\", ц-мет. с переливом и большой загл черный",
+    "brand": "Alca Plast",
+    "price": 33450.0,
+    "stock": 32,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A392BLACK.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A392BLACK",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "212054",
+    "sku": "A392C",
+    "name": "A392C Донный клапан сифона для умывальника CLICK/CLACK",
+    "brand": "Alca Plast",
+    "price": 10250.0,
+    "stock": 33,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A392C.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A392C",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1384",
+    "sku": "A393",
+    "name": "A393 Водослив для умывальника click/clack 5/4\", цельнометаллический с квадратной заглушкой",
+    "brand": "Alca Plast",
+    "price": 11900.0,
+    "stock": 63,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A393.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A393",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "217253",
+    "sku": "A395",
+    "name": "A395 Водослив для умывальника click/clack 5/4\", цельнометаллический, без перелива",
+    "brand": "Alca Plast",
+    "price": 10250.0,
+    "stock": 129,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A395.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A395",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "234675",
+    "sku": "A39",
+    "name": "Донный клапан сифона для умывальника Alca Plast click/clack 5/4\", цельнометалический, с переливом и малой заглушкой (A39)",
+    "brand": "Alca Plast",
+    "price": 9600.0,
+    "stock": 49,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A39.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A39",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "233258",
+    "sku": "M9000",
+    "name": "Комплект принадлежностей к унитазу ALCA PLAST с удлиненными деталями для людей с ограниченными физическими возможностями (M9000)",
+    "brand": "Alca Plast",
+    "price": 13800.0,
+    "stock": 106,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_M9000.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "M9000",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI",
+      "Категория": "Санфаянс",
+      "Материал": "Керамика"
+    }
+  },
+  {
+    "code1C": "237812",
+    "sku": "A43S-DN40",
+    "name": "Сифон Alca Plast для мебели для умывальника DN40 c накидной гайкой 5/4\"",
+    "brand": "Alca Plast",
+    "price": 8350.0,
+    "stock": 19,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A43S-DN40.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A43S-DN40",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "213103",
+    "sku": "A564CRM3",
+    "name": "Сифон для ванны автомат с напуском воды через перелив, хром",
+    "brand": "Alca Plast",
+    "price": 61700.0,
+    "stock": 12,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A564CRM3.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A564CRM3",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "213100",
+    "sku": "A400ANTIC",
+    "name": "Сифон для умывальника DN32 DESIGN круглый, бронза-антик",
+    "brand": "Alca Plast",
+    "price": 36000.0,
+    "stock": 4,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A400ANTIC.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A400ANTIC",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "18203",
+    "sku": "AVZ-P007",
+    "name": "AVZ-P007 Гидрозатвор для дренажных каналов",
+    "brand": "Alca Plast",
+    "price": 6600.0,
+    "stock": 2,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_AVZ-P007.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "AVZ-P007",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1490",
+    "sku": "AVZ-P008",
+    "name": "AVZ-P008 Крючок для изъятия решетки",
+    "brand": "Alca Plast",
+    "price": 1100.0,
+    "stock": 2,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_AVZ-P008.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "AVZ-P008",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "18204",
+    "sku": "AVZ-P009",
+    "name": "AVZ-P009 Заглушка для закрытия конца края дренажного канала",
+    "brand": "Alca Plast",
+    "price": 1050.0,
+    "stock": 8,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_AVZ-P009.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "AVZ-P009",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "18205",
+    "sku": "AVZ-P010",
+    "name": "AVZ-P010 Торцевое подключение к канализации на 110",
+    "brand": "Alca Plast",
+    "price": 4100.0,
+    "stock": 2,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_AVZ-P010.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "AVZ-P010",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1484",
+    "sku": "AVZ101-R101",
+    "name": "AVZ101-R101 Дренажный канал 100 мм без рамки с оцинкованной решеткой Т-образного профиля",
+    "brand": "Alca Plast",
+    "price": 12100.0,
+    "stock": 17,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_AVZ101-R101.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "AVZ101-R101",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "19081",
+    "sku": "AVZ101-R101S",
+    "name": "AVZ101-R101S Пескоуловитель для дренажного канала AVZ101 без рамы с оцинкованной решеткой Т профиль",
+    "brand": "Alca Plast",
+    "price": 47950.0,
+    "stock": 1,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_AVZ101-R101S.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "AVZ101-R101S",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1485",
+    "sku": "AVZ102-R102",
+    "name": "AVZ102-R102 Дренажный канал 100 мм, с интегрированной пластиковой рамой и оцинкованной решеткой C-об",
+    "brand": "Alca Plast",
+    "price": 12550.0,
+    "stock": 4,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_AVZ102-R102.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "AVZ102-R102",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "19082",
+    "sku": "AVZ102-R102S",
+    "name": "AVZ102-R102S Пескоуловитель для дренажного канала AVZ102 с пластиковой рамой и оцинкованной решеткой",
+    "brand": "Alca Plast",
+    "price": 39100.0,
+    "stock": 1,
+    "ai_status": "Web HQ + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_AVZ102-R102S.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "AVZ102-R102S",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "219143",
+    "sku": "APZ13-DOUBLE9-550",
+    "name": "Alcaplast APZ13-DOUBLE9 Водоотводящий желоб с двухсторонней решеткой DOUBLE APZ13-DOUBLE9-550",
+    "brand": "Alca Plast",
+    "price": 96800.0,
+    "stock": 34,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ13-DOUBLE9-550.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ13-DOUBLE9-550",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "219144",
+    "sku": "APZ13-DOUBLE9-650",
+    "name": "Alcaplast APZ13-DOUBLE9 Водоотводящий желоб с двухсторонней решеткой DOUBLE APZ13-DOUBLE9-650",
+    "brand": "Alca Plast",
+    "price": 103500.0,
+    "stock": 32,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ13-DOUBLE9-650.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ13-DOUBLE9-650",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "219145",
+    "sku": "APZ13-DOUBLE9-750",
+    "name": "Alcaplast APZ13-DOUBLE9 Водоотводящий желоб с двухсторонней решеткой DOUBLE APZ13-DOUBLE9-750",
+    "brand": "Alca Plast",
+    "price": 111300.0,
+    "stock": 26,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ13-DOUBLE9-750.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ13-DOUBLE9-750",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "219146",
+    "sku": "APZ13-DOUBLE9-850",
+    "name": "Alcaplast APZ13-DOUBLE9 Водоотводящий желоб с двухсторонней решеткой DOUBLE APZ13-DOUBLE9-850",
+    "brand": "Alca Plast",
+    "price": 118100.0,
+    "stock": 41,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ13-DOUBLE9-850.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ13-DOUBLE9-850",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1449",
+    "sku": "APZ1-550",
+    "name": "APZ1-550 универсальный водоотводящий желоб",
+    "brand": "Alca Plast",
+    "price": 80400.0,
+    "stock": 9,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ1-550.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ1-550",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1451",
+    "sku": "APZ1-750",
+    "name": "APZ1-750 Универ водоотводящий желоб для любого типа плитки",
+    "brand": "Alca Plast",
+    "price": 90800.0,
+    "stock": 7,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ1-750.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ1-750",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1452",
+    "sku": "APZ1-850",
+    "name": "APZ1-850  Универ водоотводящий желоб для любого типа плитки",
+    "brand": "Alca Plast",
+    "price": 95150.0,
+    "stock": 1,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ1-850.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ1-850",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1443",
+    "sku": "APZ10-650M",
+    "name": "APZ10-650M Универ водоотводящий желоб для любого типа плитки",
+    "brand": "Alca Plast",
+    "price": 41000.0,
+    "stock": 83,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ10-650M.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ10-650M",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "19079",
+    "sku": "APZ10-750M",
+    "name": "APZ10-750M Универ водоотводящий желоб c порогами для перфорированной решетки",
+    "brand": "Alca Plast",
+    "price": 45650.0,
+    "stock": 49,
+    "ai_status": "Web HQ + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ10-750M.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ10-750M",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "211254",
+    "sku": "APZ10-850M",
+    "name": "APZ10-850M Универ водоотводящий желоб c порогами для перфорированной решетки",
+    "brand": "Alca Plast",
+    "price": 51400.0,
+    "stock": 65,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ10-850M.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ10-850M",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1446",
+    "sku": "APZ10-950M",
+    "name": "APZ10-950M Универ водоотводящий желоб для любого типа плитки",
+    "brand": "Alca Plast",
+    "price": 57200.0,
+    "stock": 9,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ10-950M.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ10-950M",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "21187",
+    "sku": "APZ1016-1050",
+    "name": "APZ1016-1050 Водоотводящий желоб с порогами для цельной решетки, вертикальный сток",
+    "brand": "Alca Plast",
+    "price": 130900.0,
+    "stock": 7,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ1016-1050.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ1016-1050",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "151597",
+    "sku": "APZ6-850",
+    "name": "APZ6-850 Водоотводящий желоб AlcaPlast Professional",
+    "brand": "Alca Plast",
+    "price": 111350.0,
+    "stock": 4,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ6-850.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ6-850",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1460",
+    "sku": "APZ8-850M",
+    "name": "APZ8-850M Универ водоотводящий желоб для любого типа плитки",
+    "brand": "Alca Plast",
+    "price": 39400.0,
+    "stock": 20,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ8-850M.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ8-850M",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1461",
+    "sku": "APZ8-950M",
+    "name": "APZ8-950M Универ водоотводящий желоб для любого типа плитки",
+    "brand": "Alca Plast",
+    "price": 43850.0,
+    "stock": 51,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ8-950M.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ8-950M",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1462",
+    "sku": "APZ9-550M",
+    "name": "APZ9-550M Универ водоотводящий желоб для любого типа плитки",
+    "brand": "Alca Plast",
+    "price": 35150.0,
+    "stock": 481,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ9-550M.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ9-550M",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "19080",
+    "sku": "APZ9-650M",
+    "name": "APZ9-650M Универ водоотводящий желоб для любого типа плитки",
+    "brand": "Alca Plast",
+    "price": 41000.0,
+    "stock": 83,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ9-650M.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ9-650M",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1463",
+    "sku": "APZ9-750M",
+    "name": "APZ9-750M Универ водоотводящий желоб для любого типа плитки",
+    "brand": "Alca Plast",
+    "price": 45650.0,
+    "stock": 1,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ9-750M.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ9-750M",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1464",
+    "sku": "APZ9-850M",
+    "name": "APZ9-850M Универ водоотводящий желоб для любого типа плитки",
+    "brand": "Alca Plast",
+    "price": 51400.0,
+    "stock": 46,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ9-850M.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ9-850M",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1465",
+    "sku": "APZ9-950M",
+    "name": "APZ9-950M Универ водоотводящий желоб для любого типа плитки",
+    "brand": "Alca Plast",
+    "price": 57200.0,
+    "stock": 27,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ9-950M.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ9-950M",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "234676",
+    "sku": "APZ20-550",
+    "name": "Водоотводящий желоб Alca plast 550 с порогами из нержавеющей стали для двусторонней решетки (APZ20-550)",
+    "brand": "Alca Plast",
+    "price": 49600.0,
+    "stock": 36,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ20-550.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ20-550",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "235190",
+    "sku": "APZ20-650",
+    "name": "Водоотводящий желоб Alca plast 650 с порогами из нержавеющей стали для двусторонней решетки (APZ20-650)",
+    "brand": "Alca Plast",
+    "price": 53400.0,
+    "stock": 12,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ20-650.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ20-650",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "235195",
+    "sku": "APZ20-750",
+    "name": "Водоотводящий желоб Alca plast 750 с порогами из нержавеющей стали для двусторонней решетки (APZ20-750)",
+    "brand": "Alca Plast",
+    "price": 57450.0,
+    "stock": 38,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ20-750.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ20-750",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "235196",
+    "sku": "APZ20-850",
+    "name": "Водоотводящий желоб Alca plast 850 с порогами из нержавеющей стали для двусторонней решетки (APZ20-850)",
+    "brand": "Alca Plast",
+    "price": 61250.0,
+    "stock": 42,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ20-850.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ20-850",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "235197",
+    "sku": "APZ20-950",
+    "name": "Водоотводящий желоб Alca plast 950 с порогами из нержавеющей стали для двусторонней решетки (APZ20-950)",
+    "brand": "Alca Plast",
+    "price": 65450.0,
+    "stock": 25,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ20-950.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ20-950",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "213105",
+    "sku": "APZ1011-850M",
+    "name": "Водоотводящий желоб ANTIVANDAL с решеткой, вертикальный сток",
+    "brand": "Alca Plast",
+    "price": 150700.0,
+    "stock": 27,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APZ1011-850M.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APZ1011-850M",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "217438",
+    "sku": "P065-ND",
+    "name": "Гидрозатвор для пластикового водоотводящего желоба P065-ND",
+    "brand": "Alca Plast",
+    "price": 4900.0,
+    "stock": 23,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_P065-ND.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "P065-ND",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1547",
+    "sku": "BUBLE-650L",
+    "name": "BUBLE-650L Решетка для водоотводящего желоба (нерж. сталь глянц.)",
+    "brand": "Alca Plast",
+    "price": 15550.0,
+    "stock": 3,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_BUBLE-650L.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "BUBLE-650L",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "2108",
+    "sku": "LINE-850M",
+    "name": "LINE-850M Решетка для водоотводящего желоба (Нержавеющая сталь матовая)",
+    "brand": "Alca Plast",
+    "price": 22500.0,
+    "stock": 7,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_LINE-850M.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "LINE-850M",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "213624",
+    "sku": "LINE-550L",
+    "name": "Решетка для водоотводящего желоба, нержавеющая сталь-глянец",
+    "brand": "Alca Plast",
+    "price": 14750.0,
+    "stock": 10,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_LINE-550L.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "LINE-550L",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "213625",
+    "sku": "CUBE-750L",
+    "name": "Решетка для водоотводящего желоба, нержавеющая сталь-глянец",
+    "brand": "Alca Plast",
+    "price": 16400.0,
+    "stock": 6,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_CUBE-750L.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "CUBE-750L",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1433",
+    "sku": "APV1",
+    "name": "APV1 105*105/50 Сливной трап с бок подв из нерж стали",
+    "brand": "Alca Plast",
+    "price": 5400.0,
+    "stock": 46,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APV1.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APV1",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1482",
+    "sku": "APV10",
+    "name": "APV10 - Сливной трап 150*150/110 с боковой подводкой пластмассовый, белый",
+    "brand": "Alca Plast",
+    "price": 9050.0,
+    "stock": 185,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APV10.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APV10",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "212053",
+    "sku": "APV101",
+    "name": "APV101 Сливной трап 105?105/50 мм боковой сток, решетка из нержавеющей стали, гидрозатвор мокрый",
+    "brand": "Alca Plast",
+    "price": 22100.0,
+    "stock": 82,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APV101.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APV101",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1434",
+    "sku": "APV11",
+    "name": "APV11 150*150/110,  решетка серая, подводка прямая, гидрозатвор - мокрый",
+    "brand": "Alca Plast",
+    "price": 3500.0,
+    "stock": 405,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APV11.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APV11",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1436",
+    "sku": "APV2",
+    "name": "APV2 105*105/50 Сливной трап с прямой подв из нерж стали",
+    "brand": "Alca Plast",
+    "price": 5400.0,
+    "stock": 12,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_APV2.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "APV2",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "1322",
+    "sku": "A602",
+    "name": "A602 Сиденье к унитазу",
+    "brand": "Alca Plast",
+    "price": 18900.0,
+    "stock": 2,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A602.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A602",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI",
+      "Категория": "Санфаянс",
+      "Материал": "Керамика"
+    }
+  },
+  {
+    "code1C": "1324",
+    "sku": "A604",
+    "name": "A604 Сиденье к унитазу Soft Close",
+    "brand": "Alca Plast",
+    "price": 19900.0,
+    "stock": 418,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A604.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A604",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI",
+      "Категория": "Санфаянс",
+      "Материал": "Керамика"
+    }
+  },
+  {
+    "code1C": "4710",
+    "sku": "A68",
+    "name": "A68 Детское сиденье для унитаза",
+    "brand": "Alca Plast",
+    "price": 3250.0,
+    "stock": 1,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_A68.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "A68",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI",
+      "Категория": "Санфаянс",
+      "Материал": "Керамика"
+    }
+  },
+  {
+    "code1C": "3141",
+    "sku": "Z127",
+    "name": "Z127 петли для сиденья",
+    "brand": "Alca Plast",
+    "price": 4750.0,
+    "stock": 31,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_Z127.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "Z127",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI"
+    }
+  },
+  {
+    "code1C": "19663",
+    "sku": "M148",
+    "name": "M148 Удлинительная часть для стока воды к унитазу для людей с ограниченной физической активностью",
+    "brand": "Alca Plast",
+    "price": 4600.0,
+    "stock": 56,
+    "ai_status": "Excel Restored + AI Upscale",
+    "ai_image": "/uploads/products/AI_RESCUE_M148.jpg",
+    "ai_attributes": {
+      "Бренд": "Alca Plast",
+      "Артикул": "M148",
+      "Цвет": "Хром",
+      "Гарантия": "5 лет",
+      "Статус": "Verified by AI",
+      "Категория": "Санфаянс",
+      "Материал": "Керамика"
+    }
+  }
+]

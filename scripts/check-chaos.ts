@@ -3,14 +3,23 @@ const prisma = new PrismaClient()
 
 async function main() {
   const categories = await prisma.category.findMany({
-    where: { name: { contains: '(Test)' } },
-    include: { _count: { select: { products: true } } }
+    include: { _count: { select: { products: true } } },
+    orderBy: { products: { _count: 'desc' } }
   })
 
-  console.log('--- Анализ хаоса в категориях ---')
+  console.log('--- СТАТИСТИКА КАТАЛОГА ---')
   categories.forEach(c => {
-    console.log(`${c.name} (Slug: ${c.slug}): ${c._count.products} товаров`)
+    if (c._count.products > 0) {
+        console.log(`${c.name.padEnd(25)} | Товаров: ${c._count.products}`)
+    }
   })
+
+  const totalProducts = await prisma.product.count()
+  const withImages = await prisma.media.count({ where: { type: 'IMAGE' } })
+  
+  console.log('---------------------------')
+  console.log(`ВСЕГО ТОВАРОВ В БАЗЕ: ${totalProducts}`)
+  console.log(`ТОВАРОВ С КАРТИНКАМИ: ${withImages}`)
 }
 
 main().finally(() => prisma.$disconnect())

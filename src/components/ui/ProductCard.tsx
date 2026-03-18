@@ -16,6 +16,7 @@ interface ProductCardProps {
     media: { url: string }[];
     variants: { price: number; stock: number; sku: string }[];
     isBulky: boolean;
+    attributes?: string; // Новое поле
   };
 }
 
@@ -37,19 +38,27 @@ export default function ProductCard({ product }: ProductCardProps) {
   const price = product.variants[0]?.price || 0;
   const stock = product.variants[0]?.stock || 0;
 
-  // Генерация описания
-  const description = `${product.name} — это воплощение изысканного стиля и функциональности. Созданное брендом ${product.brand.name}, данное решение из категории ${product.category.name} обеспечит безупречный комфорт и станет центральным элементом вашей ванной комнаты. Использование премиальных материалов гарантирует долговечность и сохранение первозданного вида на долгие годы.`;
+  // Парсинг динамических характеристик
+  let dynamicSpecs: { label: string, value: string }[] = [];
+  try {
+    const parsed = JSON.parse(product.attributes || '{}');
+    dynamicSpecs = Object.entries(parsed).map(([key, value]) => ({
+      label: key,
+      value: String(value)
+    }));
+  } catch (e) {
+    console.error('Error parsing attributes');
+  }
 
-  const specs = [
+  // Если динамических нет, показываем базовые
+  const specs = dynamicSpecs.length > 0 ? dynamicSpecs : [
     { label: 'Бренд', value: product.brand.name },
     { label: 'Артикул', value: product.variants[0]?.sku },
     { label: 'Категория', value: product.category.name },
-    { label: 'Страна', value: 'Германия' }, // Заглушка, можно брать из БД
-    { label: 'Материал', value: 'Латунь / Керамика' },
-    { label: 'Подключение', value: 'Стандартное 1/2"' },
-    { label: 'Размеры', value: '150 x 200 x 85 мм' },
-    { label: 'Гарантия', value: '10 лет' },
   ];
+
+  // Генерация описания
+  const description = `${product.name} — это воплощение изысканного стиля и функциональности. Созданное брендом ${product.brand.name}, данное решение из категории ${product.category.name} обеспечит безупречный комфорт.`;
 
   const modalContent = (
     <div className="fixed inset-0 w-full h-full z-[99999] flex items-center justify-center p-4 md:p-10 pointer-events-auto">

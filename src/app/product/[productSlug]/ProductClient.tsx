@@ -14,6 +14,7 @@ interface ProductClientProps {
     media: { url: string; isPrimary: boolean }[]
     variants: { id: string; sku: string; price: any; stock: number; options: string }[]
     isBulky: boolean
+    attributes: string // JSON строка
   }
 }
 
@@ -23,6 +24,14 @@ export default function ProductClient({ product }: ProductClientProps) {
   const [activeImage, setActiveImage] = useState(
     product.media.find(m => m.isPrimary)?.url || product.media[0]?.url || 'https://via.placeholder.com/800'
   )
+
+  // Парсинг атрибутов
+  let attributes: Record<string, string> = {}
+  try {
+    attributes = JSON.parse(product.attributes || '{}')
+  } catch (e) {
+    console.error('Ошибка парсинга атрибутов')
+  }
 
   const price = Number(selectedVariant?.price).toLocaleString('ru-RU')
 

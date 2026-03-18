@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import ProductsTableFilters from '@/components/admin/ProductsTableFilters';
 import Pagination from '@/components/admin/Pagination';
+import BulkDeleteButton from '@/components/admin/BulkDeleteButton';
 
 export const dynamic = 'force-dynamic';
 
@@ -72,9 +73,12 @@ export default async function AdminProductsPage({ searchParams }: PageProps) {
                     <h1 className="text-2xl font-serif text-white uppercase tracking-tight">Управление товарами</h1>
                     <p className="text-gray-500 text-sm mt-1 uppercase tracking-widest text-[10px]">Всего позиций в базе: {totalCount}</p>
                 </div>
-                <Link href="/admin/products/new" className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all shadow-lg shadow-blue-900/20 active:scale-95 shrink-0">
-                    <Plus size={16} /> Добавить товар
-                </Link>
+                <div className="flex items-center gap-3">
+                    <BulkDeleteButton />
+                    <Link href="/admin/products/new" className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-all shadow-lg shadow-blue-900/20 active:scale-95 shrink-0">
+                        <Plus size={16} /> Добавить товар
+                    </Link>
+                </div>
             </div>
 
             <div className="space-y-4 flex flex-col">
