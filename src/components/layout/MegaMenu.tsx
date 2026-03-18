@@ -23,9 +23,17 @@ export default function MegaMenu({ categories }: MegaMenuProps) {
 
   const closeMenu = () => setIsOpen(false)
 
+  if (!categories || categories.length === 0) {
+    return (
+      <Link href="/catalog" className="text-primary hover:text-accent transition-colors cursor-pointer font-bold uppercase tracking-widest text-[11px]">
+        Каталог
+      </Link>
+    );
+  }
+
   return (
     <div 
-      className="group py-7"
+      className="group py-7 relative z-[100]"
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
@@ -38,41 +46,34 @@ export default function MegaMenu({ categories }: MegaMenuProps) {
       </Link>
 
       <div 
-        className={`absolute top-full left-1/2 -translate-x-1/2 w-[95vw] max-w-7xl mt-6 bg-zinc-600/95 backdrop-blur-xl shadow-premium ring-1 ring-white/10 rounded-[40px] transition-all duration-500 z-50 overflow-hidden border border-white/10 ${
+        className={`absolute top-full left-1/2 -translate-x-1/2 w-[95vw] max-w-7xl mt-6 bg-primary/95 backdrop-blur-xl shadow-premium ring-1 ring-white/10 rounded-[40px] transition-all duration-500 z-50 overflow-hidden border border-white/10 ${
           isOpen ? 'opacity-100 visible translate-y-2' : 'opacity-0 invisible translate-y-0'
         }`}
         onClick={closeMenu}
       >
         <div className="container mx-auto px-12 py-16 grid grid-cols-1 md:grid-cols-5 gap-12">
           {/* Categories */}
-          <div className="md:col-span-3 grid grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="md:col-span-3 grid grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
             {categories.map((cat) => (
-              <div key={cat.id} className="space-y-6">
+              <div key={cat.id} className="space-y-4">
                 <Link 
                   href={`/catalog/${cat.slug}`}
-                  className="text-white font-serif text-xl block hover:text-accent transition-all hover:translate-x-1 uppercase tracking-tight"
+                  className="text-white font-serif text-lg block hover:text-accent transition-all hover:translate-x-1 uppercase tracking-wider font-bold"
                 >
                   {cat.name}
                 </Link>
-                <ul className="space-y-3 border-l border-white/10 pl-4">
-                  {cat.children.slice(0, 5).map((sub) => (
+                <ul className="space-y-2 border-l border-white/5 pl-4">
+                  {cat.children.map((sub) => (
                     <li key={sub.id}>
                       <Link 
                         href={`/catalog/${sub.slug}`}
-                        className="text-[11px] uppercase tracking-widest text-zinc-200 hover:text-accent transition-all flex items-center gap-2 group/item"
+                        className="text-[10px] uppercase tracking-[0.15em] text-zinc-400 hover:text-accent transition-all flex items-center gap-2 group/item"
                       >
-                        <div className="w-1 h-1 rounded-full bg-white/20 group-hover/item:bg-accent transition-colors"></div>
+                        <div className="w-1 h-1 rounded-full bg-white/10 group-hover/item:bg-accent transition-colors"></div>
                         {sub.name}
                       </Link>
                     </li>
                   ))}
-                  {cat.children.length > 5 && (
-                    <li className="pt-2">
-                      <Link href={`/catalog/${cat.slug}`} className="text-[10px] text-accent font-bold hover:text-white transition-colors uppercase tracking-widest flex items-center gap-1">
-                        Смотреть все <span className="text-[12px]">→</span>
-                      </Link>
-                    </li>
-                  )}
                 </ul>
               </div>
             ))}

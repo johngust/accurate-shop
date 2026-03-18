@@ -4,12 +4,17 @@ import { Search, ShoppingBag, User, Heart, Menu } from 'lucide-react'
 import MegaMenu from './MegaMenu'
 import { prisma } from '@/lib/prisma'
 
+export const dynamic = 'force-dynamic';
+
 export default async function Header() {
   const categories = await prisma.category.findMany({
     where: { parentId: null },
     include: { children: true },
-    take: 6,
+    orderBy: { name: 'asc' }
   })
+  
+  console.log(`HEADER DEBUG: Найдено ${categories.length} корневых категорий.`);
+  categories.forEach(c => console.log(` - ${c.name}: ${c.children.length} подкатегорий`));
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">

@@ -2,40 +2,40 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
-    console.log('--- ФОРМИРОВАНИЕ ПРЕМЕАЛЬНОЙ ИЕРАРХИИ (BULAK + UX) ---');
+    console.log('--- ФОРМИРОВАНИЕ МАКСИМАЛЬНОЙ ИЕРАРХИИ (BULAK STYLE) ---');
 
     const tree = [
         {
             name: "Смесители",
-            sub: ["Для раковины", "Для кухни", "Для ванны", "Для душа", "Для биде", "Скрытого монтажа", "Комплектующие"]
+            sub: ["Для раковины", "Для кухни", "Для ванны", "Для душа", "Для биде", "Встраиваемые смесители", "На борт ванны", "Напольные смесители", "Комплектующие"]
         },
         {
             name: "Душевая программа",
-            sub: ["Душевые системы", "Душевые гарнитуры", "Верхние души", "Лейки", "Шланги", "Душевые поддоны"]
+            sub: ["Душевые системы", "Душевые гарнитуры", "Верхние души", "Гигиенические души", "Лейки и шланги", "Душевые поддоны"]
         },
         {
             name: "Санфаянс",
-            sub: ["Унитазы", "Раковины", "Биде", "Инсталляции", "Кнопки смыва"]
-        },
-        {
-            name: "Ванны",
-            sub: ["Акриловые", "Каменные", "Чугунные", "Стальные"]
+            sub: ["Унитазы напольные", "Унитазы подвесные", "Биде", "Писсуары", "Раковины", "Инсталляции", "Кнопки смыва"]
         },
         {
             name: "Мебель для ванной",
-            sub: ["Тумбы с раковиной", "Шкафы-зеркала", "Зеркала", "Пеналы", "Столешницы"]
+            sub: ["Тумбы с раковиной", "Шкафы-зеркала", "Зеркала", "Пеналы", "Комоды и полки", "Столешницы"]
+        },
+        {
+            name: "Ванны",
+            sub: ["Акриловые", "Чугунные", "Стальные", "Из литьевого мрамора"]
         },
         {
             name: "Водоотвод",
-            sub: ["Душевые лотки", "Трапы", "Сифоны", "Выпуски и гофры"]
+            sub: ["Душевые лотки", "Трапы", "Сифоны", "Выпуски", "Гофры и трубы"]
         },
         {
             name: "Аксессуары",
-            sub: ["Держатели и крючки", "Полки", "Дозаторы и мыльницы", "Ершики"]
+            sub: ["Держатели", "Крючки", "Мыльницы и дозаторы", "Ершики", "Полки"]
         },
         {
             name: "Кухонные мойки",
-            sub: ["Из нержавеющей стали", "Из камня"]
+            sub: ["Из нержавеющей стали", "Из камня", "Аксессуары для моек"]
         }
     ];
 
@@ -44,34 +44,26 @@ async function main() {
             .replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-');
     }
 
-    console.log("Очистка старого дерева...");
-    // Убираем связи у товаров, чтобы не было ошибок
-    await prisma.product.updateMany({ data: { categoryId: null } });
-    await prisma.category.deleteMany({});
-
     for (const parent of tree) {
-        const parentSlug = slugify(parent.name);
-        const parentCat = await prisma.category.create({
-            data: { 
-                name: parent.name, 
-                slug: parentSlug 
-            }
+        const pSlug = slugify(parent.name);
+        const parentCat = await prisma.category.upsert({
+            where: { slug: pSlug },
+            update: { name: parent.name },
+            create: { name: parent.name, slug: pSlug }
         });
 
-        for (const subName of parent.sub) {
-            const subSlug = slugify(`${parent.name}-${subName}`);
-            await prisma.category.create({
-                data: {
-                    name: subName,
-                    slug: subSlug,
-                    parentId: parentCat.id
-                }
+        for (const sub of parent.sub) {
+            const sSlug = slugify(`${parent.name}-${sub}`);
+            await prisma.category.upsert({
+                where: { slug: sSlug },
+                update: { name: sub, parentId: parentCat.id },
+                create: { name: sub, slug: sSlug, parentId: parentCat.id }
             });
         }
-        console.log(`[OK] Создан раздел: ${parent.name} (+${parent.sub.length} подкатегорий)`);
+        console.log(`[OK] Секция: ${parent.name} (+${parent.sub.length} подкатегорий)`);
     }
 
-    console.log('--- НОВАЯ ИЕРАРХИЯ ПОСТРОЕНА УСПЕШНО ---');
+    console.log('--- ПОЛНАЯ ИЕРАРХИЯ ПОСТРОЕНА ---');
 }
 
 main().finally(() => prisma.$disconnect());
