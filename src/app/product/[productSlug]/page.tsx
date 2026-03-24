@@ -33,8 +33,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <div className="container mx-auto px-6 py-6 flex items-center gap-2 text-[10px] uppercase tracking-widest text-gray-400">
         <Link href="/" className="hover:text-primary transition-colors">Главная</Link>
         <ChevronRight className="w-3 h-3" />
-        <Link href={`/catalog/${product.category.slug}`} className="hover:text-primary transition-colors">{product.category.name}</Link>
-        <ChevronRight className="w-3 h-3" />
+        {product.category && (
+          <>
+            <Link href={`/catalog/${product.category.slug}`} className="hover:text-primary transition-colors">{product.category.name}</Link>
+            <ChevronRight className="w-3 h-3" />
+          </>
+        )}
         <span className="text-primary font-medium">{product.name}</span>
       </div>
 

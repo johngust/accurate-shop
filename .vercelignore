@@ -1,0 +1,6 @@
+scripts/
+public/uploads/
+.next/
+node_modules/
+*.db
+*.sqlite

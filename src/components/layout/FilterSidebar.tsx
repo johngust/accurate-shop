@@ -34,7 +34,7 @@ export default async function FilterSidebar({ categorySlug }: FilterSidebarProps
 
   return (
     <aside className="w-80 shrink-0 hidden lg:block font-sans">
-      <div className="sticky top-32 bg-white border border-gray-100 p-10 shadow-premium ring-1 ring-black/5 rounded-luxury">
+      <div className="sticky top-32 bg-white border border-gray-100 p-10 shadow-premium ring-1 ring-black/5 rounded-luxury max-h-[calc(100vh-160px)] overflow-y-auto custom-scrollbar">
         <FilterForm 
           brands={brands.map(b => ({ id: b.id, name: b.name, slug: b.slug }))}
           categories={formatCategories(categories)}

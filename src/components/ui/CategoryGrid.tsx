@@ -18,7 +18,7 @@ const categories = [
   {
     name: 'Раковины',
     slug: 'sinks',
-    image: 'https://images.unsplash.com/photo-1620627812624-38308872e690?q=80&w=600',
+    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=600',
     count: '2.8k+ товаров'
   },
   {
@@ -67,7 +67,7 @@ export default function CategoryGrid() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {categories.map((cat, idx) => (
             <Link 
               key={cat.slug}

@@ -5,13 +5,15 @@ import Image from 'next/image'
 import { ShoppingCart, FileText, Truck, ShieldCheck, Heart } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
 
+import EliteGallery from '@/components/product/EliteGallery'
+
 interface ProductClientProps {
   product: {
     id: string
     name: string
     slug: string
     brand: { name: string }
-    media: { url: string; isPrimary: boolean }[]
+    media: { url: string; type: string; isPrimary: boolean }[]
     variants: { id: string; sku: string; price: any; stock: number; options: string }[]
     isBulky: boolean
     attributes: string // JSON строка
@@ -21,9 +23,6 @@ interface ProductClientProps {
 export default function ProductClient({ product }: ProductClientProps) {
   const { addItem } = useCart()
   const [selectedVariant, setSelectedVariant] = useState(product.variants[0])
-  const [activeImage, setActiveImage] = useState(
-    product.media.find(m => m.isPrimary)?.url || product.media[0]?.url || 'https://via.placeholder.com/800'
-  )
 
   // Парсинг атрибутов
   let attributes: Record<string, string> = {}
@@ -43,7 +42,7 @@ export default function ProductClient({ product }: ProductClientProps) {
       slug: product.slug,
       price: Number(selectedVariant.price),
       quantity: 1,
-      image: activeImage,
+      image: product.media.find(m => m.isPrimary)?.url || product.media[0]?.url || '',
       isBulky: product.isBulky
     })
     alert('Товар добавлен в корзину')
@@ -51,43 +50,16 @@ export default function ProductClient({ product }: ProductClientProps) {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
-      {/* Левая колонка: Галерея (60% / 3 колонки) */}
-      <div className="lg:col-span-3 flex flex-col md:flex-row gap-6">
-        {/* Миниатюры */}
-        <div className="flex md:flex-col gap-4 order-2 md:order-1 shrink-0 overflow-x-auto md:overflow-y-auto max-h-[600px] no-scrollbar">
-          {product.media.map((m, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveImage(m.url)}
-              className={`relative w-20 aspect-[4/5] rounded-lg overflow-hidden border-2 transition-all ${activeImage === m.url ? 'border-accent shadow-lg' : 'border-transparent hover:border-gray-200'
-                }`}
-            >
-              <Image src={m.url} alt="" fill className="object-cover" />
-            </button>
-          ))}
-        </div>
-
-        {/* Главное фото */}
-        <div className="relative flex-grow aspect-[4/5] rounded-3xl overflow-hidden bg-surface order-1 md:order-2">
-          <Image
-            src={activeImage}
-            alt={product.name}
-            fill
-            className="object-cover"
-            priority
-          />
-          {product.isBulky && (
-            <div className="absolute top-8 left-8 bg-primary/90 text-white text-[10px] uppercase tracking-widest px-6 py-2 rounded-full backdrop-blur-md font-bold shadow-xl border border-white/20">
-              Крупногабарит
-            </div>
-          )}
-          <button className="absolute top-8 right-8 p-3 bg-white/50 backdrop-blur-md rounded-full text-primary hover:text-accent transition-all hover:scale-110 shadow-sm border border-white/30">
-            <Heart className="w-6 h-6" />
-          </button>
-        </div>
+      {/* Левая колонка: Elite Gallery (60%) */}
+      <div className="lg:col-span-3">
+        <EliteGallery 
+          media={product.media} 
+          productName={product.name} 
+          isBulky={product.isBulky} 
+        />
       </div>
 
-      {/* Правая колонка: Инфо и Кнопки (40% / 2 колонки) */}
+      {/* Правая колонка: Инфо и Кнопки (40%) */}
       <div className="lg:col-span-2 flex flex-col justify-center">
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">

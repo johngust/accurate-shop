@@ -137,7 +137,7 @@ export default function DealsClient({ initialDeals, products }: { initialDeals: 
                     <Image src={deal.product.media[0]?.url || ''} alt="" fill className="object-contain p-2" />
                   </div>
                   <div>
-                    <h4 className="text-white font-bold">{deal.product.name}</h4>
+                    <h4 className="text-white font-bold">{deal.product?.name || 'Товар удален'}</h4>
                     <p className="text-gray-500 text-xs mt-1">Редактирование условий акции</p>
                   </div>
                 </div>

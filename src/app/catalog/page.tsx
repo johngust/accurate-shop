@@ -1,8 +1,12 @@
 import { prisma } from '@/lib/prisma'
 import ProductCard from '@/components/ui/ProductCard'
 import FilterSidebar from '@/components/layout/FilterSidebar'
+import SearchInput from '@/components/layout/SearchInput'
 import Link from 'next/link'
 import { ChevronRight, SlidersHorizontal } from 'lucide-react'
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 interface AllProductsCatalogProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
@@ -15,12 +19,21 @@ export default async function AllProductsCatalog({ searchParams }: AllProductsCa
   const minPrice = typeof sParams.minPrice === 'string' ? Number(sParams.minPrice) : undefined
   const maxPrice = typeof sParams.maxPrice === 'string' ? Number(sParams.maxPrice) : undefined
   const sort = typeof sParams.sort === 'string' ? sParams.sort : 'popular'
+  const search = typeof sParams.search === 'string' ? sParams.search : undefined
 
   // Build where clause
   const where: any = {}
 
+  if (search) {
+    where.OR = [
+      { name: { contains: search } },
+      { brand: { name: { contains: search } } },
+      { variants: { some: { sku: { contains: search } } } }
+    ]
+  }
+
   if (brandsFilter.length > 0) {
-    where.brand = { slug: { in: brandsFilter } }
+    where.brand = { ...where.brand, slug: { in: brandsFilter } }
   }
 
   if (minPrice !== undefined || maxPrice !== undefined) {
@@ -67,10 +80,17 @@ export default async function AllProductsCatalog({ searchParams }: AllProductsCa
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 border-b border-gray-100 pb-12">
           <div className="max-w-2xl">
             <h1 className="font-serif text-6xl text-primary mb-6 leading-tight uppercase tracking-tight">
-              Полный <span className="italic text-accent">каталог</span>
+              {search ? (
+                <>Поиск: <span className="italic text-accent">{search}</span></>
+              ) : (
+                <>Полный <span className="italic text-accent">каталог</span></>
+              )}
             </h1>
             <p className="text-gray-500 text-sm leading-relaxed font-light uppercase tracking-wider">
-              Исследуйте наш полный ассортимент премиальной сантехники. От изысканных смесителей до роскошных ванн — всё для создания вашего идеального пространства.
+              {search 
+                ? `Результаты поиска для "${search}" среди нашего ассортимента премиальной сантехники.`
+                : 'Исследуйте наш полный ассортимент премиальной сантехники. От изысканных смесителей до роскошных ванн — всё для создания вашего идеального пространства.'
+              }
             </p>
           </div>
           <div className="flex items-center gap-4 text-[10px] uppercase tracking-widest text-gray-400 font-bold bg-white px-6 py-3 rounded-full shadow-sm border border-gray-50">
@@ -83,15 +103,21 @@ export default async function AllProductsCatalog({ searchParams }: AllProductsCa
           <FilterSidebar />
 
           {/* Сетка товаров */}
-          <div className="flex-grow">
-            {/* Mobile filter trigger */}
-            <button className="lg:hidden w-full mb-8 flex items-center justify-center gap-2 py-4 border border-gray-200 rounded-xl text-[10px] uppercase tracking-widest font-medium text-primary bg-white shadow-sm">
-              <SlidersHorizontal className="w-4 h-4" /> Параметры
-            </button>
+          <div className="flex-grow space-y-8">
+            {/* Search and Mobile Trigger */}
+            <div className="flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between bg-white/50 backdrop-blur-sm p-4 rounded-3xl border border-white shadow-sm relative z-40">
+              <div className="flex-grow">
+                <SearchInput />
+              </div>
+              
+              <button className="lg:hidden flex items-center justify-center gap-2 px-8 py-4 border border-gray-200 rounded-2xl text-[10px] uppercase tracking-widest font-bold text-primary bg-white hover:bg-gray-50 transition-all shadow-sm">
+                <SlidersHorizontal className="w-4 h-4" /> Фильтры
+              </button>
+            </div>
 
             {products.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 gap-y-12">
-                {products.map((product) => (
+                {products.map((product: any) => (
                   <ProductCard key={product.id} product={product as any} />
                 ))}
               </div>

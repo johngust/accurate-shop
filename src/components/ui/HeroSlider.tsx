@@ -30,7 +30,7 @@ const DEFAULT_PROMOS = [
     title: "Весеннее",
     subtitle: "обновление -20%",
     tagline: "Скидки на коллекцию сантехники Villeroy & Boch",
-    image: "https://images.unsplash.com/photo-1620627812624-38308872e690?q=80&w=2000",
+    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2000",
     buttonText: "Успеть купить",
     link: "/catalog/villeroy-boch"
   }

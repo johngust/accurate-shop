@@ -1,0 +1,92 @@
+[
+  {
+    "id": "9c0ca050-0d57-4f62-bd73-c2a2967f8f6a",
+    "name": "Аксессуары",
+    "parentId": null
+  },
+  {
+    "id": "cddbe758-6fc4-48c0-9a4b-49be193c8a0f",
+    "name": "Из камня",
+    "parentId": "cddbe758-6fc4-48c0-9a4b-49be193c8a0f"
+  },
+  {
+    "id": "c7f9be2f-bdad-49a7-bb54-f865c8b2e1d8",
+    "name": "Смесители",
+    "parentId": null
+  },
+  {
+    "id": "b29613d1-0c89-4f88-a383-5afa70b1e492",
+    "name": "Ванны",
+    "parentId": null
+  },
+  {
+    "id": "0553b7ef-07ad-4828-94fc-af24704308d2",
+    "name": "Унитазы",
+    "parentId": null
+  },
+  {
+    "id": "8fae005e-ed7d-4c76-ad68-5d58f218df93",
+    "name": "Раковины",
+    "parentId": null
+  },
+  {
+    "id": "becc7483-a224-457c-b5c3-3276aaeabc67",
+    "name": "Мойки",
+    "parentId": null
+  },
+  {
+    "id": "6b22a2e1-5966-4c77-bf2b-a782a97b7e28",
+    "name": "Душевые системы",
+    "parentId": null
+  },
+  {
+    "id": "5e24e066-0bf9-401b-96d5-34ed081ed6c1",
+    "name": "Сифоны",
+    "parentId": null
+  },
+  {
+    "id": "173d223a-4251-4edf-8889-8ff7c4a63251",
+    "name": "Трапы",
+    "parentId": null
+  },
+  {
+    "id": "df9e9213-6f9d-4e16-a583-4bb7acbb56d1",
+    "name": "Кнопки смыва",
+    "parentId": null
+  },
+  {
+    "id": "5f6afd75-554a-42a7-bd6e-64d636b6b0cb",
+    "name": "Тумбы под раковину",
+    "parentId": null
+  },
+  {
+    "id": "ae2b4b15-e757-4b02-8675-51c5d047b2f3",
+    "name": "Комплектующие",
+    "parentId": "0553b7ef-07ad-4828-94fc-af24704308d2"
+  },
+  {
+    "id": "c8e20187-ec48-4e85-b6df-fcca971fc693",
+    "name": "Комплектующие",
+    "parentId": "c7f9be2f-bdad-49a7-bb54-f865c8b2e1d8"
+  },
+  {
+    "id": "b59cc29e-1730-42f1-a213-3932728bf38b",
+    "name": "Комплектующие",
+    "parentId": "b29613d1-0c89-4f88-a383-5afa70b1e492"
+  },
+  {
+    "id": "e87f135b-7d30-4427-a2ca-85afc6b40a7e",
+    "name": "Комплектующие",
+    "parentId": "8fae005e-ed7d-4c76-ad68-5d58f218df93"
+  },
+  {
+    "id": "358ae87e-4387-46b1-9d72-c5a8fcc11ea2",
+    "name": "Комплектующие",
+    "parentId": "becc7483-a224-457c-b5c3-3276aaeabc67"
+  },
+  {
+    "id": "a641bba4-bf10-4033-9db5-ffbb5d3df42a",
+    "name": "Комплектующие",
+    "parentId": "6b22a2e1-5966-4c77-bf2b-a782a97b7e28"
+  }
+]

@@ -6,3 +6,12 @@ compatibility_date = "2024-04-03"
 binding = "DB" # Это имя будет использоваться в коде
 database_name = "accurate-db"
 database_id = "YOUR_DATABASE_ID_HERE" # Сюда нужно будет вставить ID после создания базы
+
+[[r2_buckets]]
+binding = 'BUCKET'
+bucket_name = 'accurate-media'
+preview_bucket_name = 'accurate-media-preview'
+
+[[kv_namespaces]]
+binding = "KV"
+id = "СЮДА_ВСТАВЬТЕ_ВАШ_ID_ИЗ_ТЕРМИНАЛА"

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
   LayoutDashboard,
+  Activity,
   Package,
   ShoppingCart,
   FolderTree,
@@ -16,10 +17,13 @@ import {
   Bell,
   Images,
   Zap,
+  Smartphone,
 } from 'lucide-react';
 
 const navItems = [
   { href: '/admin', label: 'Дашборд', icon: LayoutDashboard, exact: true },
+  { href: '/admin/mobile-preview', label: 'Вид с телефона', icon: Smartphone },
+  { href: '/admin/import-monitor', label: 'Мониторинг', icon: Activity },
   { href: '/admin/products', label: 'Товары', icon: Package },
   { href: '/admin/orders', label: 'Заказы', icon: ShoppingCart },
   { href: '/admin/categories', label: 'Категории', icon: FolderTree },

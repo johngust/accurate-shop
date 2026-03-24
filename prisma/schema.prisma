@@ -56,6 +56,16 @@ model Brand {
   products  Product[]
 }
 
+model ImportStatus {
+  id          String   @id @default("active")
+  total       Int      @default(0)
+  success     Int      @default(0)
+  errors      Int      @default(0)
+  reviews     Int      @default(0)
+  lastSku     String?
+  updatedAt   DateTime @updatedAt
+}
+
 model Product {
   id            String   @id @default(uuid())
   name          String

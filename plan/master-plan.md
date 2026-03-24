@@ -190,3 +190,10 @@ model OrderItem {
 - Не пытайтесь написать весь код в один гигантский ответ. Двигайтесь мелкими итерациями, сначала структура → потом компонент.
 - При проектировании UI делайте упор на чистоту, отступы (whitespace) и премиальный внешний вид. Избегайте дефолтных "дешевых" компонентов.
 - Активно используйте `lucide-react` для иконок.
+
+## POST-IMPORT STRATEGY
+1. Catalog Cleanup (fix type errors)
+2. Image Quality Audit (anti-blur ops)
+3. Technical Schematics Integration
+4. Advanced Animations & UI Polish
+5. Price Sync Engine Development

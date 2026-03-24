@@ -129,13 +129,13 @@ export default async function AdminProductsPage({ searchParams }: PageProps) {
                                             <td className="px-4 py-3">
                                                 <div className="flex items-center gap-1.5 text-gray-400 text-xs">
                                                     <Layers size={14} className="text-gray-600" />
-                                                    {p.category.name}
+                                                    {p.category?.name || 'Без категории'}
                                                 </div>
                                             </td>
                                             <td className="px-4 py-3">
                                                 <div className="flex items-center gap-1.5 text-gray-400 text-xs">
                                                     <Tag size={14} className="text-gray-600" />
-                                                    {p.brand.name}
+                                                    {p.brand?.name || 'Без бренда'}
                                                 </div>
                                             </td>
                                             <td className="px-4 py-3">

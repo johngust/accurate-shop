@@ -29,6 +29,11 @@ const nextConfig: NextConfig = {
         pathname: '**',
       },
     ],
+    localPatterns: [
+      {
+        pathname: '/uploads/**',
+      },
+    ],
   },
 };
 

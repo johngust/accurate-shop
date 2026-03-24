@@ -131,7 +131,7 @@ export default function MegaMenu({ categories }: MegaMenuProps) {
           {/* Promo */}
           <div className="relative overflow-hidden rounded-[30px] bg-white/5 text-white p-10 flex flex-col justify-end min-h-[350px] group border border-white/10 self-start">
             <Image 
-              src="https://images.unsplash.com/photo-1620627812624-38308872e690?q=80&w=600"
+              src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=600"
               alt="Promo"
               fill
               className="object-cover opacity-40 group-hover:scale-110 transition-transform duration-1000"

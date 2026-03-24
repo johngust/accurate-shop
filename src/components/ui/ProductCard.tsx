@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, ShoppingCart, Zap, ArrowRight, Info, ShieldCheck, Globe } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface ProductCardProps {
   product: {
@@ -14,15 +15,17 @@ interface ProductCardProps {
     brand: { name: string };
     category: { name: string };
     media: { url: string }[];
-    variants: { price: number; stock: number; sku: string }[];
+    variants: { price: number; stock: number; sku: string; options: string }[];
     isBulky: boolean;
-    attributes?: string; // Новое поле
+    attributes?: string;
+    description?: string;
   };
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
   const [showQuickView, setShowQuickView] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isImageLoading, setIsImageLoading] = useState(true);
 
   useEffect(() => {
     setMounted(true);
@@ -34,9 +37,19 @@ export default function ProductCard({ product }: ProductCardProps) {
     return () => { document.body.style.overflow = 'unset'; };
   }, [showQuickView]);
 
-  const mainImage = product.media[0]?.url || 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000';
+  const mainImage = product.media[0]?.url || 'https://via.placeholder.com/1000';
   const price = product.variants[0]?.price || 0;
   const stock = product.variants[0]?.stock || 0;
+
+  // Извлекаем размеры из вариантов
+  const sizes = product.variants
+    .map(v => {
+      try {
+        const opts = JSON.parse(v.options || '{}');
+        return opts.size || null;
+      } catch { return null; }
+    })
+    .filter(Boolean);
 
   // Парсинг динамических характеристик
   let dynamicSpecs: { label: string, value: string }[] = [];
@@ -50,26 +63,33 @@ export default function ProductCard({ product }: ProductCardProps) {
     console.error('Error parsing attributes');
   }
 
-  // Если динамических нет, показываем базовые
   const specs = dynamicSpecs.length > 0 ? dynamicSpecs : [
     { label: 'Бренд', value: product.brand.name },
     { label: 'Артикул', value: product.variants[0]?.sku },
     { label: 'Категория', value: product.category.name },
   ];
 
-  // Генерация описания
-  const description = `${product.name} — это воплощение изысканного стиля и функциональности. Созданное брендом ${product.brand.name}, данное решение из категории ${product.category.name} обеспечит безупречный комфорт.`;
+  const description = product.description || `${product.name} от бренда ${product.brand.name} — это стандарт надежности в сегменте торговой сантехники.`;
 
   const modalContent = (
     <div className="fixed inset-0 w-full h-full z-[99999] flex items-center justify-center p-4 md:p-10 pointer-events-auto">
       {/* Backdrop */}
-      <div 
-        className="absolute inset-0 bg-primary/60 backdrop-blur-2xl cursor-pointer" 
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="absolute inset-0 bg-primary/80 backdrop-blur-2xl cursor-pointer" 
         onClick={() => setShowQuickView(false)}
-      ></div>
+      />
       
       {/* Modal Content */}
-      <div className="relative bg-white w-full max-w-6xl rounded-[40px] shadow-premium flex flex-col md:row overflow-hidden max-h-[90vh] z-10 animate-in fade-in zoom-in-95 slide-in-from-bottom-10 duration-700">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.9, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.9, y: 20 }}
+        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+        className="relative bg-white w-full max-w-6xl rounded-[40px] shadow-premium flex flex-col md:flex-row overflow-hidden max-h-[90vh] z-10"
+      >
         <button 
           onClick={() => setShowQuickView(false)}
           className="absolute top-8 right-8 z-50 w-10 h-10 flex items-center justify-center text-primary/20 hover:text-primary hover:rotate-90 transition-all duration-500 bg-surface rounded-full shadow-sm"
@@ -81,13 +101,17 @@ export default function ProductCard({ product }: ProductCardProps) {
           {/* Left: Product View */}
           <div className="w-full md:w-5/12 bg-surface p-12 md:p-20 flex flex-col items-center justify-center border-r border-gray-50/50">
             <div className="relative w-full aspect-square mb-12">
+              {isImageLoading && (
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100 animate-pulse rounded-3xl"></div>
+              )}
               <Image 
                 src={mainImage} 
                 alt={product.name} 
                 fill 
-                className="object-contain mix-blend-multiply"
+                className={`object-contain mix-blend-multiply transition-all duration-700 ${isImageLoading ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}
                 sizes="40vw"
                 priority
+                onLoadingComplete={() => setIsImageLoading(false)}
               />
             </div>
             
@@ -157,15 +181,23 @@ export default function ProductCard({ product }: ProductCardProps) {
 
             {/* Actions */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-6">
-              <button className="w-full bg-primary text-white h-16 rounded-2xl flex items-center justify-center gap-3 hover:bg-accent transition-all duration-500 shadow-xl shadow-primary/10 active:scale-95">
+              <motion.button 
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-primary text-white h-16 rounded-2xl flex items-center justify-center gap-3 hover:bg-accent transition-all duration-500 shadow-xl shadow-primary/10"
+              >
                 <ShoppingCart size={20} strokeWidth={1.5} />
                 <span className="text-[10px] uppercase tracking-[0.2em] font-black">В корзину</span>
-              </button>
+              </motion.button>
               
-              <button className="w-full bg-white border-2 border-primary text-primary h-16 rounded-2xl flex items-center justify-center gap-3 hover:bg-primary hover:text-white transition-all duration-500 active:scale-95">
+              <motion.button 
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-white border-2 border-primary text-primary h-16 rounded-2xl flex items-center justify-center gap-3 hover:bg-primary hover:text-white transition-all duration-500"
+              >
                 <Zap size={20} className="fill-current" />
                 <span className="text-[10px] uppercase tracking-[0.2em] font-black">Купить в 2 клика</span>
-              </button>
+              </motion.button>
             </div>
 
             <Link 
@@ -178,14 +210,16 @@ export default function ProductCard({ product }: ProductCardProps) {
             </Link>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 
   return (
     <>
-      <div 
-        className="group relative bg-white rounded-3xl border border-gray-100 transition-all duration-500 hover:shadow-2xl cursor-pointer hover:z-20"
+      <motion.div 
+        whileHover={{ y: -5 }}
+        whileTap={{ scale: 0.98 }}
+        className="group relative bg-white rounded-3xl border border-gray-100 transition-all duration-700 hover:shadow-[0_20px_80px_-15px_rgba(0,0,0,0.1)] cursor-pointer hover:z-20 overflow-hidden"
         onClick={() => setShowQuickView(true)}
       >
         {/* Badge */}
@@ -196,31 +230,51 @@ export default function ProductCard({ product }: ProductCardProps) {
         )}
 
         {/* Image Container */}
-        <div className="aspect-[4/5] relative bg-surface rounded-t-3xl flex items-center justify-center p-8 pointer-events-none">
-          <div className="relative w-full h-full transition-transform duration-500 ease-out group-hover:scale-[1.4] z-30">
+        <div className="aspect-[4/5] relative bg-surface rounded-t-3xl flex items-center justify-center p-8 pointer-events-none overflow-hidden">
+          {isImageLoading && (
+            <div className="absolute inset-0 bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100 animate-pulse"></div>
+          )}
+          <div className="relative w-full h-full transition-all duration-700 ease-out group-hover:scale-110 group-hover:-translate-y-2 z-30">
             <Image 
               src={mainImage}
               alt={product.name}
               fill
-              className="object-contain transition-all duration-500 group-hover:drop-shadow-xl"
+              className={`object-contain transition-all duration-700 ${isImageLoading ? 'opacity-0' : 'opacity-100'}`}
+              onLoadingComplete={() => setIsImageLoading(false)}
             />
           </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
         </div>
 
         {/* Content Area */}
-        <div className="p-6 space-y-2 relative z-10 bg-white rounded-b-3xl">
+        <div className="p-4 md:p-6 space-y-1 md:space-y-2 relative z-10 bg-white rounded-b-3xl">
           <div className="flex justify-between items-start">
-            <span className="text-[10px] text-accent font-bold uppercase tracking-widest">{product.brand.name}</span>
-            <span className="text-[10px] text-gray-400 font-medium uppercase tracking-tighter">{product.category.name}</span>
+            <span className="text-[8px] md:text-[10px] text-accent font-bold uppercase tracking-widest line-clamp-1">{product.brand.name}</span>
+            <span className="hidden md:block text-[10px] text-gray-400 font-medium uppercase tracking-tighter">{product.category.name}</span>
           </div>
-          <h3 className="font-serif text-lg text-primary leading-tight line-clamp-2 h-14">{product.name}</h3>
-          <div className="pt-2 flex items-baseline gap-2">
-            <span className="text-xl font-bold text-primary">{price.toLocaleString()} ₸</span>
+          <h3 className="font-serif text-sm md:text-lg text-primary leading-tight line-clamp-2 h-[2.5rem] md:h-[4.5rem] group-hover:text-accent transition-colors duration-500">
+            {product.name}
+          </h3>
+          
+          <div className="pt-1 md:pt-2 flex items-center justify-between">
+            <span className="text-base md:text-xl font-bold text-primary tracking-tighter">{price.toLocaleString()} ₸</span>
+            
+            {/* Size Dots */}
+            {sizes.length > 1 && (
+              <div className="hidden md:flex gap-1">
+                {sizes.slice(0, 3).map((_, i) => (
+                  <div key={i} className="w-1.5 h-1.5 rounded-full bg-gray-200 border border-gray-300"></div>
+                ))}
+                {sizes.length > 3 && <span className="text-[8px] text-gray-400 font-bold">+{sizes.length - 3}</span>}
+              </div>
+            )}
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      {showQuickView && mounted && createPortal(modalContent, document.body)}
+      <AnimatePresence mode="wait">
+        {showQuickView && mounted && createPortal(modalContent, document.body)}
+      </AnimatePresence>
     </>
   );
 }

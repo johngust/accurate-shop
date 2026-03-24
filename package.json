@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "pages:deploy": "npm run pages:build && npx wrangler pages deploy .vercel/output/static --project-name accurate-shop",
     "start": "next start",
     "lint": "eslint",
     "postinstall": "prisma generate"
@@ -13,11 +15,13 @@
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1015.0",
     "@prisma/adapter-d1": "^7.5.0",
     "@prisma/client": "^6.4.1",
     "adm-zip": "^0.5.16",
     "axios": "^1.13.6",
     "exceljs": "^4.4.0",
+    "framer-motion": "^12.38.0",
     "lucide-react": "^0.446.0",
     "next": "16.1.6",
     "react": "19.2.3",
@@ -26,6 +30,7 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.16",
     "@tailwindcss/postcss": "^4",
     "@types/adm-zip": "^0.5.8",
     "@types/node": "^20",

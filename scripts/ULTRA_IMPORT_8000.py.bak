@@ -1,0 +1,163 @@
+import os
+import json
+import torch
+import subprocess
+import shutil
+import re
+import time
+import uuid
+from transformers import CLIPProcessor, CLIPModel
+from PIL import Image
+from icrawler.builtin import BingImageCrawler, GoogleImageCrawler
+import torch.nn.functional as F
+import sqlite3
+
+# Настройки
+IMG_DIR = "public/uploads/products"
+MODEL_NAME = "openai/clip-vit-base-patch32"
+DATA_FILE = "data_fixed.json"
+DB_PATH = "prisma/dev.db"
+GOLD_REF_PATH = "gold_target.png"
+ESRGAN_PATH = "scripts/ai/realesrgan-ncnn-vulkan.exe"
+
+print("--- AI ULTRA IMPORT V12: THE FINAL BOSS ---")
+
+# 1. Загрузка ИИ
+model = CLIPModel.from_pretrained(MODEL_NAME, use_safetensors=True)
+processor = CLIPProcessor.from_pretrained(MODEL_NAME)
+device = "cuda" if torch.cuda.is_available() else "cpu"
+model.to(device)
+
+def get_image_features(img_path):
+    image = Image.open(img_path).convert("RGB")
+    inputs = processor(images=image, return_tensors="pt").to(device)
+    with torch.no_grad():
+        vision_outputs = model.vision_model(**inputs)
+        features = vision_outputs[1]
+        return features / features.norm(dim=-1, keepdim=True)
+
+GOLD_FEATURES = get_image_features(GOLD_REF_PATH)
+
+def db_execute(query, params=()):
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute(query, params)
+    res = cursor.fetchall()
+    conn.commit()
+    conn.close()
+    return res
+
+def upscale_image(input_path, output_path):
+    try:
+        subprocess.run([ESRGAN_PATH, "-i", input_path, "-o", output_path, "-n", "realesrgan-x4plus"], 
+                       stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=60)
+        return True
+    except: return False
+
+def generate_specs(item):
+    name = item['name'].lower()
+    brand = item['brand']
+    specs = {
+        "Бренд": brand,
+        "Артикул": item['sku'],
+        "Цвет": "Золото" if "ig0" in item['sku'].lower() else "Хром",
+        "Гарантия": "5 лет",
+        "Материал": "Латунь / Нержавеющая сталь"
+    }
+    if "тумба" in name or "шкаф" in name: specs.update({"Категория": "Мебель", "Материал": "ЛДСП"})
+    elif "унитаз" in name: specs.update({"Категория": "Санфаянс", "Материал": "Керамика"})
+    return specs
+
+def process_group(group_name, items):
+    """Обрабатывает группу товаров с вариациями"""
+    base_item = items[0]
+    sku = base_item['sku']
+    brand = base_item['brand']
+    
+    # Проверка на существование
+    exists = db_execute("SELECT id FROM Product WHERE name = ?", (group_name,))
+    if exists: return
+
+    # 1. Выбор картинки
+    ref_path = os.path.join(IMG_DIR, f"{sku}.png")
+    if not os.path.exists(ref_path): ref_path = os.path.join(IMG_DIR, f"{base_item['code1C']}.png")
+    
+    final_img_url = None
+    if os.path.exists(ref_path):
+        # Пробуем найти HQ
+        temp_dir = f"scripts/ai/temp_{sku}"
+        if os.path.exists(temp_dir): shutil.rmtree(temp_dir)
+        os.makedirs(temp_dir)
+        
+        crawler = BingImageCrawler(storage={'root_dir': temp_dir})
+        crawler.crawl(keyword=f"{brand} {group_name} product photo", max_num=3)
+        
+        best_found = None
+        ref_feats = get_image_features(ref_path)
+        for f in os.listdir(temp_dir):
+            try:
+                curr_feats = get_image_features(os.path.join(temp_dir, f))
+                sim = F.cosine_similarity(ref_feats, curr_feats).item()
+                if sim > 0.88:
+                    best_found = os.path.join(temp_dir, f)
+                    break
+            except: continue
+        
+        final_filename = f"V12_{sku}.jpg"
+        target_path = os.path.join(IMG_DIR, final_filename)
+        
+        source = best_found if best_found else ref_path
+        if upscale_image(source, target_path):
+            final_img_url = f"/uploads/products/{final_filename}"
+        
+        shutil.rmtree(temp_dir)
+
+    if not final_img_url: 
+        db_execute("UPDATE ImportStatus SET errors = errors + 1 WHERE id = 'active'")
+        return
+
+    # 2. Вставка в БД
+    p_id = str(uuid.uuid4())
+    cat_res = db_execute("SELECT id FROM Category LIMIT 1")
+    cat_id = cat_res[0][0] if cat_res else None
+    brand_res = db_execute("SELECT id FROM Brand WHERE name = ?", (brand,))
+    brand_id = brand_res[0][0] if brand_res else None
+
+    if not brand_id or not cat_id: return
+
+    # Продукт
+    db_execute("INSERT INTO Product (id, name, slug, description, brandId, categoryId, attributes) VALUES (?,?,?,?,?,?,?)",
+               (p_id, group_name, f"{sku.lower()}-{p_id[:4]}", f"Коллекция {group_name}", brand_id, cat_id, json.dumps(generate_specs(base_item))))
+    
+    # Варианты (Размеры)
+    for i in items:
+        size = re.search(r'(\d{2,4})', i['name'])
+        size_val = size.group(0) if size else "Стандарт"
+        db_execute("INSERT INTO ProductVariant (id, productId, sku, price, stock, options) VALUES (?,?,?,?,?,?)",
+                   (str(uuid.uuid4()), p_id, i['sku'], i['price'], i['stock'], json.dumps({"size": size_val})))
+    
+    # Медиа
+    db_execute("INSERT INTO Media (id, productId, url, type, isPrimary) VALUES (?,?,?,?,?)",
+               (str(uuid.uuid4()), p_id, final_img_url, 'IMAGE', 1))
+
+    db_execute("UPDATE ImportStatus SET success = success + 1, lastSku = ? WHERE id = 'active'", (sku,))
+    print(f"  [OK] Group {group_name} imported.")
+
+if __name__ == "__main__":
+    with open(DATA_FILE, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    
+    # Группировка
+    grouped = {}
+    for item in data:
+        base_name = re.sub(r'\d+', '', item['name']).strip()
+        key = f"{item['brand']}_{base_name}"
+        if key not in grouped: grouped[key] = []
+        grouped[key].append(item)
+    
+    print(f"Found {len(grouped)} groups from {len(data)} items.")
+    db_execute("INSERT OR IGNORE INTO ImportStatus (id, success, errors, reviews) VALUES ('active', 0, 0, 0)")
+
+    for name_key, items in grouped.items():
+        clean_name = name_key.split('_')[1]
+        process_group(clean_name, items)
