@@ -1,5 +1,6 @@
 scripts/
 public/uploads/
+mobile/
 .next/
 node_modules/
 *.db
