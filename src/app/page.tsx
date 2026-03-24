@@ -14,6 +14,8 @@ interface HomePageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
+export const dynamic = 'force-dynamic';
+
 export default async function HomePage({ searchParams }: HomePageProps) {
   // Получаем товары для витрины
   const productsRaw = await prisma.product.findMany({
