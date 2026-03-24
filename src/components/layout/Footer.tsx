@@ -1,17 +1,24 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Instagram, Facebook, Youtube, Phone, Mail, MapPin, CreditCard } from 'lucide-react'
+import { Instagram, Facebook, Youtube, CreditCard } from 'lucide-react'
 import { prisma } from '@/lib/prisma'
 
 export default async function Footer() {
   const currentYear = new Date().getFullYear()
   
-  // Получаем топ-5 категорий для подвала
-  const categories = await prisma.category.findMany({
-    take: 5,
-    where: { parentId: null },
-    orderBy: { name: 'asc' }
-  })
+  let categories: any[] = []
+  
+  try {
+    // Получаем топ-5 категорий для подвала
+    categories = await prisma.category.findMany({
+      take: 5,
+      where: { parentId: null },
+      orderBy: { name: 'asc' }
+    })
+  } catch (error) {
+    console.error('Ошибка получения категорий в Footer (Build time?):', error)
+    categories = []
+  }
 
   return (
     <footer className="bg-primary text-white pt-24 pb-12 font-sans">
