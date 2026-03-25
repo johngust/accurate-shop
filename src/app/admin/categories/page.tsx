@@ -2,6 +2,8 @@ import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
 import { FolderTree, Plus, Edit, ChevronRight } from 'lucide-react';
 
+export const runtime = "edge";
+
 export default async function AdminCategoriesPage() {
     const categories = await prisma.category.findMany({
         include: {

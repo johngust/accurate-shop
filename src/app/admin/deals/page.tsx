@@ -1,6 +1,8 @@
 import { prisma } from '@/lib/prisma';
 import DealsClient from './DealsClient';
 
+export const runtime = "edge";
+
 export default async function AdminDealsPage() {
   const deals = (prisma as any).dealOfTheDay 
     ? await (prisma as any).dealOfTheDay.findMany({

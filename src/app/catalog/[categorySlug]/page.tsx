@@ -10,6 +10,8 @@ interface CatalogPageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
+export const runtime = "edge";
+
 export default async function CatalogPage({ params, searchParams }: CatalogPageProps) {
   const { categorySlug } = await params
   const sParams = await searchParams

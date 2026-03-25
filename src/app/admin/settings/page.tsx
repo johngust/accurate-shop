@@ -1,6 +1,8 @@
 import { prisma } from '@/lib/prisma'
 import SettingsForm from './SettingsForm'
 
+export const runtime = "edge";
+
 export default async function AdminSettingsPage() {
   const settings = await prisma.siteSettings.findUnique({
     where: { id: 'global' }

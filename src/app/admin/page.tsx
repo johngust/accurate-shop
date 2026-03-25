@@ -13,6 +13,8 @@ import {
 import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
 
+export const runtime = "edge";
+
 async function getStats() {
     const [
         totalProducts,

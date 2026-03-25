@@ -1,5 +1,7 @@
 import ImportDashboard from '@/components/admin/ImportDashboard';
 
+export const runtime = "edge";
+
 export default function ImportPage() {
     return (
         <div className="container mx-auto py-10">

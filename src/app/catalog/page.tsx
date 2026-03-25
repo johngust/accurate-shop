@@ -7,6 +7,7 @@ import { ChevronRight, SlidersHorizontal } from 'lucide-react'
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
+export const runtime = "edge";
 
 interface AllProductsCatalogProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>

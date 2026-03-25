@@ -8,6 +8,8 @@ interface ProductPageProps {
   params: Promise<{ productSlug: string }>
 }
 
+export const runtime = "edge";
+
 export default async function ProductPage({ params }: ProductPageProps) {
   const { productSlug } = await params
 

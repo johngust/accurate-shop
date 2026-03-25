@@ -2,6 +2,8 @@ import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
 import { ShoppingCart, Clock, CheckCircle, Truck, Package, AlertCircle } from 'lucide-react';
 
+export const runtime = "edge";
+
 type Props = { searchParams: { status?: string; page?: string } };
 
 const statusConfig: Record<string, { label: string; color: string; border: string; icon: React.ElementType }> = {

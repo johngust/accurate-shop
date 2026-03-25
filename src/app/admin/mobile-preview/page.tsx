@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { Smartphone, RotateCw, RefreshCw, ChevronLeft, ChevronRight, Globe } from 'lucide-react';
 
+export const runtime = "edge";
+
 const DEVICES = [
   { name: 'iPhone 13 Pro', width: 390, height: 844, scale: 0.8 },
   { name: 'Samsung S21', width: 360, height: 800, scale: 0.8 },
