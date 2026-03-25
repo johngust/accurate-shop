@@ -4,9 +4,6 @@ const nextConfig: NextConfig = {
   // Оптимизация для Cloudflare
   serverExternalPackages: ['@prisma/client'],
   
-  // Улучшенная встряска дерева (Tree Shaking) для иконок
-  optimizePackageImports: ['lucide-react'],
-  
   // Настройка для работы с изображениями (если используете R2)
   images: {
     remotePatterns: [

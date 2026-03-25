@@ -3,7 +3,7 @@ import { prisma } from '@/lib/prisma';
 
 export const runtime = "edge";
 
-export async function GET(req: Request, { params }: { params: Promise<{ slug: string[] }> }) {
+export async function GET(req: Request, { params }: { params: Promise<{ slug?: string[] }> }) {
   const { slug } = await params;
   const action = slug?.[0];
 
@@ -41,7 +41,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ slug: st
   }
 }
 
-export async function POST(req: Request, { params }: { params: Promise<{ slug: string[] }> }) {
+export async function POST(req: Request, { params }: { params: Promise<{ slug?: string[] }> }) {
     const { slug } = await params;
     const action = slug?.[0];
 
