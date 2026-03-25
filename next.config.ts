@@ -1,37 +1,27 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Оптимизация для Cloudflare
+  serverExternalPackages: ['@prisma/client'],
+  
+  // Улучшенная встряска дерева (Tree Shaking) для иконок
+  optimizePackageImports: ['lucide-react'],
+  
+  // Отключаем индикатор девайса в продакшене
+  devIndicators: {
+    appIsrStatus: false,
+  },
+
+  // Настройка для работы с изображениями (если используете R2)
   images: {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: '**.r2.dev',
+      },
+      {
+        protocol: 'https',
         hostname: 'images.unsplash.com',
-        pathname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'via.placeholder.com',
-        pathname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: '**.grohe.com',
-        pathname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: '**.santehnika-online.ru',
-        pathname: '**',
-      },
-      {
-        protocol: 'https',
-        hostname: '**.ozone.ru',
-        pathname: '**',
-      },
-    ],
-    localPatterns: [
-      {
-        pathname: '/uploads/**',
       },
     ],
   },
