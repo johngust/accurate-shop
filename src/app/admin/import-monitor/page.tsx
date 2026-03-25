@@ -3,9 +3,7 @@ import { Activity, CheckCircle, AlertTriangle, XCircle, Package } from 'lucide-r
 
 import { AutoRefresh } from '@/components/admin/AutoRefresh';
 
-export const dynamic = 'force-dynamic';
 export const revalidate = 0;
-export const runtime = "edge";
 
 export default async function ImportMonitor() {
     // Используем прямой SQL запрос для максимальной надежности

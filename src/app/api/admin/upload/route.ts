@@ -1,12 +1,7 @@
 import { NextResponse } from 'next/server';
-import { writeFile, mkdir } from 'fs/promises';
+import { v4 as uuidv4 } from 'uuid';
 
 export const runtime = "edge";
-
-import path from 'path';
-import { v4 as uuidv4 } from 'uuid';
-import { PutObjectCommand } from '@aws-sdk/client-s3';
-import { r2Client } from '@/lib/s3';
 
 export async function POST(req: Request) {
   try {
@@ -18,26 +13,20 @@ export async function POST(req: Request) {
     }
 
     const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-
+    
     // Создаем уникальное имя файла
-    const fileExtension = path.extname(file.name);
-    const fileName = `${uuidv4()}${fileExtension}`;
+    const fileName = `${uuidv4()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
 
-    // ПРОВЕРЯЕМ: Если настроен Cloudflare R2, грузим туда
-    if (process.env.R2_ENDPOINT && process.env.R2_ACCESS_KEY_ID && process.env.R2_SECRET_ACCESS_KEY) {
-      console.log('☁️ Загрузка в Cloudflare R2...');
-      
-      const bucketName = process.env.R2_BUCKET_NAME || 'accurate-media';
-      
-      await r2Client.send(
-        new PutObjectCommand({
-          Bucket: bucketName,
-          Key: fileName,
-          Body: buffer,
-          ContentType: file.type,
-        })
-      );
+    // ПРОВЕРЯЕМ: Если есть привязка Cloudflare R2 (через wrangler.toml)
+    const bucket = (process.env as any).BUCKET;
+
+    if (bucket) {
+      // Использование нативного API R2 (намного легче, чем AWS SDK)
+      await bucket.put(fileName, bytes, {
+        httpMetadata: {
+          contentType: file.type,
+        }
+      });
 
       const publicUrl = process.env.R2_PUBLIC_URL || `https://pub-your-id.r2.dev`;
       
@@ -47,21 +36,10 @@ export async function POST(req: Request) {
       });
     }
 
-    // ЛОКАЛЬНАЯ ЗАГРУЗКА (Fallback)
-    console.log('💻 Локальная загрузка...');
-    const uploadDir = path.join(process.cwd(), 'public', 'uploads');
-    
-    try {
-      await mkdir(uploadDir, { recursive: true });
-    } catch (e) {}
-
-    const filePath = path.join(uploadDir, fileName);
-    await writeFile(filePath, buffer);
-
     return NextResponse.json({ 
-      url: `/uploads/${fileName}`,
-      success: true 
-    });
+      error: 'R2 Storage (BUCKET binding) не найден. Убедитесь, что биндинг настроен в Cloudflare Pages.',
+      success: false
+    }, { status: 500 });
 
   } catch (error: any) {
     console.error('Upload error:', error);

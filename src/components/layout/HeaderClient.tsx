@@ -6,7 +6,9 @@ import Image from 'next/image'
 import { Search, ShoppingBag, User, Heart, Menu } from 'lucide-react'
 import MegaMenu from './MegaMenu'
 import SearchInput from './SearchInput'
-import MobileMenu from './MobileMenu'
+import dynamic from 'next/dynamic'
+
+const MobileMenu = dynamic(() => import('./MobileMenu'), { ssr: false })
 
 interface HeaderClientProps {
   categories: any[]

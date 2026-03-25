@@ -2,8 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 
-export const runtime = "edge";
-
 const COLLECTIONS = [
   {
     id: 'subway-2-0',

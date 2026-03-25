@@ -1,5 +1,3 @@
-export const runtime = "edge";
-
 export default function DeliveryPage() {
   return (
     <div className="container mx-auto px-6 py-32 font-sans">

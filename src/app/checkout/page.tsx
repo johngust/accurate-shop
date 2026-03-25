@@ -6,8 +6,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ChevronLeft, Truck, CreditCard, CheckCircle2, Box } from 'lucide-react'
 
-export const runtime = "edge";
-
 export default function CheckoutPage() {
   const { items, totalAmount, hasBulkyItems, clearCart } = useCart()
   const [isOrdered, setIsOrdered] = useState(false)

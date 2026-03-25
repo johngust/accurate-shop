@@ -5,8 +5,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Trash2, Plus, Minus, ArrowRight, ShoppingBag } from 'lucide-react'
 
-export const runtime = "edge";
-
 export default function CartPage() {
   const { items, updateQuantity, removeItem, totalAmount } = useCart()
 

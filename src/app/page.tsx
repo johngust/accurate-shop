@@ -14,8 +14,7 @@ interface HomePageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export const dynamic = 'force-dynamic';
-export const runtime = "edge";
+export const revalidate = 3600; // Ревалидация раз в час
 
 export default async function HomePage({ searchParams }: HomePageProps) {
   // Получаем товары для витрины

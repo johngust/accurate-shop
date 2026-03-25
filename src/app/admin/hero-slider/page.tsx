@@ -1,8 +1,6 @@
 import { prisma } from '@/lib/prisma';
 import HeroSliderClient from './HeroSliderClient';
 
-export const runtime = "edge";
-
 export default async function HeroSliderPage() {
   const slides = (prisma as any).heroSlide 
     ? await (prisma as any).heroSlide.findMany({ orderBy: { order: 'asc' } })

@@ -7,11 +7,6 @@ const nextConfig: NextConfig = {
   // Улучшенная встряска дерева (Tree Shaking) для иконок
   optimizePackageImports: ['lucide-react'],
   
-  // Отключаем индикатор девайса в продакшене
-  devIndicators: {
-    appIsrStatus: false,
-  },
-
   // Настройка для работы с изображениями (если используете R2)
   images: {
     remotePatterns: [
@@ -22,6 +17,10 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'via.placeholder.com',
       },
     ],
   },

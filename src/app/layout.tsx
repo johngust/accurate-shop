@@ -20,9 +20,6 @@ export const metadata: Metadata = {
   description: "Гипермаркет сантехники для ценителей качества и стиля. 100k+ SKU, B2B сметы, премиальный сервис.",
 };
 
-export const dynamic = 'force-dynamic';
-export const runtime = "edge";
-
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,

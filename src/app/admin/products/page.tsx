@@ -18,9 +18,6 @@ import ProductsTableFilters from '@/components/admin/ProductsTableFilters';
 import Pagination from '@/components/admin/Pagination';
 import BulkDeleteButton from '@/components/admin/BulkDeleteButton';
 
-export const dynamic = 'force-dynamic';
-export const runtime = "edge";
-
 interface PageProps {
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }

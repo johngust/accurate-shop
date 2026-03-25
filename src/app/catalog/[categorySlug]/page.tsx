@@ -10,7 +10,21 @@ interface CatalogPageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export const runtime = "edge";
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  try {
+    const categories = await prisma.category.findMany({
+      select: { slug: true },
+      take: 20 // Генерируем только топ-20 категорий для ускорения билда
+    });
+    return categories.map((cat) => ({
+      categorySlug: cat.slug,
+    }));
+  } catch (e) {
+    return [];
+  }
+}
 
 export default async function CatalogPage({ params, searchParams }: CatalogPageProps) {
   const { categorySlug } = await params

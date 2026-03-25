@@ -2,8 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FileText, ChevronRight, Calculator, CheckCircle2, Download } from 'lucide-react'
 
-export const runtime = "edge";
-
 const PROJECTS = [
   {
     id: 'highvill-premium',

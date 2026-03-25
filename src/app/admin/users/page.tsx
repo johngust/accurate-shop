@@ -1,8 +1,6 @@
 import { prisma } from '@/lib/prisma';
 import { Users, Crown, Briefcase, ShoppingCart } from 'lucide-react';
 
-export const runtime = "edge";
-
 export default async function AdminUsersPage() {
     const users = await prisma.user.findMany({
         include: { _count: { select: { orders: true, projects: true } } },
