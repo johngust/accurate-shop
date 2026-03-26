@@ -60,7 +60,7 @@ export default async function AdminCategoriesPage() {
                         {/* Children */}
                         {cat.children.length > 0 && (
                             <div className="border-t border-gray-800 divide-y divide-gray-800/60">
-                                {cat.children.map((child) => (
+                                {cat.children.map((child: any) => (
                                     <div key={child.id} className="flex items-center justify-between px-6 py-3 pl-14 bg-gray-950/30">
                                         <div className="flex items-center gap-2 text-gray-400">
                                             <ChevronRight size={13} className="text-gray-600" />

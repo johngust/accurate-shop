@@ -33,7 +33,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     notFound()
   }
 
-  const bimModel = product.media.find(m => m.type === 'BIM' || m.type === 'MODEL_3D')
+  const bimModel = product.media.find((m: any) => m.type === 'BIM' || m.type === 'MODEL_3D')
 
   return (
     <div className="bg-white min-h-screen">

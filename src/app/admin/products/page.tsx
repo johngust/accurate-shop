@@ -119,7 +119,7 @@ export default async function AdminProductsPage({ searchParams }: PageProps) {
                             <tbody className="divide-y divide-gray-800">
                                 {products.map((p) => {
                                     const mainVariant = p.variants[0];
-                                    const totalStock = p.variants.reduce((sum, v) => sum + v.stock, 0);
+                                    const totalStock = p.variants.reduce((sum: number, v: any) => sum + v.stock, 0);
                                     
                                     return (
                                         <tr key={p.id} className="group hover:bg-gray-800/40 transition-colors">
