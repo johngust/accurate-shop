@@ -8,20 +8,26 @@ interface ProductPageProps {
   params: Promise<{ productSlug: string }>
 }
 
+export const runtime = 'edge';
 export const revalidate = 3600;
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { productSlug } = await params
 
-  const product = await prisma.product.findUnique({
-    where: { slug: productSlug },
-    include: {
-      brand: true,
-      category: true,
-      media: true,
-      variants: true,
-    }
-  })
+  let product: any = null
+  try {
+    product = await prisma.product.findUnique({
+      where: { slug: productSlug },
+      include: {
+        brand: true,
+        category: true,
+        media: true,
+        variants: true,
+      }
+    })
+  } catch (e) {
+    product = null
+  }
 
   if (!product) {
     notFound()

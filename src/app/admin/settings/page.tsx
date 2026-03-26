@@ -2,13 +2,18 @@ import { prisma } from '@/lib/prisma'
 import SettingsForm from './SettingsForm'
 
 export default async function AdminSettingsPage() {
-  const settings = await prisma.siteSettings.findUnique({
-    where: { id: 'global' }
-  }) || {
+  let settings: any = {
     headerPhone: '',
     footerAbout: '',
     footerEmail: '',
     footerAddress: ''
+  }
+  try {
+    settings = await prisma.siteSettings.findUnique({
+      where: { id: 'global' }
+    }) || settings;
+  } catch (e) {
+    // fallback to defaults
   }
 
   return (

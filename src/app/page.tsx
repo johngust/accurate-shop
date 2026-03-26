@@ -17,19 +17,22 @@ interface HomePageProps {
 export const revalidate = 3600; // Ревалидация раз в час
 
 export default async function HomePage({ searchParams }: HomePageProps) {
-  // Получаем товары для витрины
-  const productsRaw = await prisma.product.findMany({
-    include: {
-      brand: true,
-      media: true,
-      variants: true,
-      category: true
-    },
-    take: 10,
-    orderBy: { id: 'desc' }
-  })
-
-  const products = JSON.parse(JSON.stringify(productsRaw))
+  let products: any[] = []
+  try {
+    const productsRaw = await prisma.product.findMany({
+      include: {
+        brand: true,
+        media: true,
+        variants: true,
+        category: true
+      },
+      take: 10,
+      orderBy: { id: 'desc' }
+    })
+    products = JSON.parse(JSON.stringify(productsRaw))
+  } catch (e) {
+    products = []
+  }
 
   return (
     <div className="flex flex-col font-sans bg-white relative">

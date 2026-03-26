@@ -3,24 +3,33 @@ import { Activity, CheckCircle, AlertTriangle, XCircle, Package } from 'lucide-r
 
 import { AutoRefresh } from '@/components/admin/AutoRefresh';
 
+export const runtime = 'edge';
 export const revalidate = 0;
 
 export default async function ImportMonitor() {
-    // Используем прямой SQL запрос для максимальной надежности
-    const statusRaw: any[] = await prisma.$queryRaw`SELECT * FROM ImportStatus WHERE id = 'active' LIMIT 1`;
-    const status = statusRaw[0] || null;
-
-    const productsCount = await prisma.product.count();
-    const stats = {
-        total: status?.total || 0,
-        success: status?.success || 0,
-        errors: status?.errors || 0,
-        reviews: status?.reviews || 0,
-        noImageCount: status?.noImageCount || 0,
-        misplacedCount: status?.misplacedCount || 0,
-        lastSku: status?.lastSku || 'N/A',
-        updatedAt: status?.updatedAt ? new Date(status.updatedAt) : new Date()
+    let productsCount = 0;
+    let stats = {
+        total: 0, success: 0, errors: 0, reviews: 0,
+        noImageCount: 0, misplacedCount: 0, lastSku: 'N/A',
+        updatedAt: new Date()
     };
+    try {
+        const statusRaw: any[] = await prisma.$queryRaw`SELECT * FROM ImportStatus WHERE id = 'active' LIMIT 1`;
+        const status = statusRaw[0] || null;
+        productsCount = await prisma.product.count();
+        stats = {
+            total: status?.total || 0,
+            success: status?.success || 0,
+            errors: status?.errors || 0,
+            reviews: status?.reviews || 0,
+            noImageCount: status?.noImageCount || 0,
+            misplacedCount: status?.misplacedCount || 0,
+            lastSku: status?.lastSku || 'N/A',
+            updatedAt: status?.updatedAt ? new Date(status.updatedAt) : new Date()
+        };
+    } catch (e) {
+        productsCount = 0;
+    }
 
     return (
         <div className="p-8 max-w-7xl mx-auto space-y-8">

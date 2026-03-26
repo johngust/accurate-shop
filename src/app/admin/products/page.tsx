@@ -18,6 +18,8 @@ import ProductsTableFilters from '@/components/admin/ProductsTableFilters';
 import Pagination from '@/components/admin/Pagination';
 import BulkDeleteButton from '@/components/admin/BulkDeleteButton';
 
+export const runtime = 'edge';
+
 interface PageProps {
     searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
@@ -25,7 +27,6 @@ interface PageProps {
 export default async function AdminProductsPage({ searchParams }: PageProps) {
     const params = await searchParams;
 
-    // Преобразование в плоский объект для Pagination
     const queryParams: Record<string, string> = {};
     Object.entries(params).forEach(([key, value]) => {
         if (typeof value === 'string') queryParams[key] = value;
@@ -37,32 +38,45 @@ export default async function AdminProductsPage({ searchParams }: PageProps) {
     const categoryId = (params.category as string) || '';
     const brandId = (params.brand as string) || '';
 
-    // Build Prisma filter
-    const where: any = {
-        OR: [
-            { name: { contains: query } },
-            { slug: { contains: query } },
-            { variants: { some: { sku: { contains: query } } } }
-        ]
-    };
+    let products: any[] = [];
+    let totalCount = 0;
+    let categories: any[] = [];
+    let brands: any[] = [];
+    let totalPages = 0;
 
-    if (categoryId) where.categoryId = categoryId;
-    if (brandId) where.brandId = brandId;
+    try {
+        const where: any = {
+            OR: [
+                { name: { contains: query } },
+                { slug: { contains: query } },
+                { variants: { some: { sku: { contains: query } } } }
+            ]
+        };
 
-    const [products, totalCount, categories, brands] = await Promise.all([
-        prisma.product.findMany({
-            where,
-            include: { category: true, brand: true, variants: true, media: true },
-            skip: (page - 1) * pageSize,
-            take: pageSize,
-            orderBy: { name: 'asc' }
-        }),
-        prisma.product.count({ where }),
-        prisma.category.findMany({ select: { id: true, name: true }, orderBy: { name: 'asc' } }),
-        prisma.brand.findMany({ select: { id: true, name: true }, orderBy: { name: 'asc' } })
-    ]);
+        if (categoryId) where.categoryId = categoryId;
+        if (brandId) where.brandId = brandId;
 
-    const totalPages = Math.ceil(totalCount / pageSize);
+        [products, totalCount, categories, brands] = await Promise.all([
+            prisma.product.findMany({
+                where,
+                include: { category: true, brand: true, variants: true, media: true },
+                skip: (page - 1) * pageSize,
+                take: pageSize,
+                orderBy: { name: 'asc' }
+            }),
+            prisma.product.count({ where }),
+            prisma.category.findMany({ select: { id: true, name: true }, orderBy: { name: 'asc' } }),
+            prisma.brand.findMany({ select: { id: true, name: true }, orderBy: { name: 'asc' } })
+        ]);
+
+        totalPages = Math.ceil(totalCount / pageSize);
+    } catch (e) {
+        products = [];
+        totalCount = 0;
+        categories = [];
+        brands = [];
+        totalPages = 0;
+    }
 
     return (
         <div className="space-y-6">

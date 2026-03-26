@@ -14,36 +14,40 @@ import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
 
 async function getStats() {
-    const [
-        totalProducts,
-        totalOrders,
-        totalUsers,
-        pendingOrders,
-        recentOrders,
-        lowStockVariants,
-    ] = await Promise.all([
-        prisma.product.count(),
-        prisma.order.count(),
-        prisma.user.count(),
-        prisma.order.count({ where: { status: 'PENDING' } }),
-        prisma.order.findMany({
-            take: 8,
-            orderBy: { id: 'desc' },
-            include: { user: true, items: true },
-        }),
-        prisma.productVariant.findMany({
-            where: { stock: { lte: 5 } },
-            take: 5,
-            include: { product: true },
-        }),
-    ]);
+    try {
+        const [
+            totalProducts,
+            totalOrders,
+            totalUsers,
+            pendingOrders,
+            recentOrders,
+            lowStockVariants,
+        ] = await Promise.all([
+            prisma.product.count(),
+            prisma.order.count(),
+            prisma.user.count(),
+            prisma.order.count({ where: { status: 'PENDING' } }),
+            prisma.order.findMany({
+                take: 8,
+                orderBy: { id: 'desc' },
+                include: { user: true, items: true },
+            }),
+            prisma.productVariant.findMany({
+                where: { stock: { lte: 5 } },
+                take: 5,
+                include: { product: true },
+            }),
+        ]);
 
-    const revenue = await prisma.order.aggregate({
-        _sum: { totalAmount: true },
-        where: { status: { in: ['PAID', 'DELIVERED'] } },
-    });
+        const revenue = await prisma.order.aggregate({
+            _sum: { totalAmount: true },
+            where: { status: { in: ['PAID', 'DELIVERED'] } },
+        });
 
-    return { totalProducts, totalOrders, totalUsers, pendingOrders, recentOrders, lowStockVariants, revenue };
+        return { totalProducts, totalOrders, totalUsers, pendingOrders, recentOrders, lowStockVariants, revenue };
+    } catch (e) {
+        return { totalProducts: 0, totalOrders: 0, totalUsers: 0, pendingOrders: 0, recentOrders: [], lowStockVariants: [], revenue: { _sum: { totalAmount: 0 } } };
+    }
 }
 
 const statusConfig: Record<string, { label: string; color: string; icon: React.ElementType }> = {

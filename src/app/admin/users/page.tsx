@@ -2,13 +2,19 @@ import { prisma } from '@/lib/prisma';
 import { Users, Crown, Briefcase, ShoppingCart } from 'lucide-react';
 
 export default async function AdminUsersPage() {
-    const users = await prisma.user.findMany({
-        include: { _count: { select: { orders: true, projects: true } } },
-        orderBy: { id: 'desc' },
-        take: 50,
-    });
-
-    const b2bCount = users.filter(u => u.role === 'B2B_CONTRACTOR').length;
+    let users: any[] = [];
+    let b2bCount = 0;
+    try {
+        users = await prisma.user.findMany({
+            include: { _count: { select: { orders: true, projects: true } } },
+            orderBy: { id: 'desc' },
+            take: 50,
+        });
+        b2bCount = users.filter((u: any) => u.role === 'B2B_CONTRACTOR').length;
+    } catch (e) {
+        users = [];
+        b2bCount = 0;
+    }
 
     return (
         <div className="space-y-6">

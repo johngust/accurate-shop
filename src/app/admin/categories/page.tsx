@@ -3,16 +3,22 @@ import Link from 'next/link';
 import { FolderTree, Plus, Edit, ChevronRight } from 'lucide-react';
 
 export default async function AdminCategoriesPage() {
-    const categories = await prisma.category.findMany({
-        include: {
-            children: { include: { _count: { select: { products: true } } } },
-            _count: { select: { products: true } },
-        },
-        where: { parentId: null },
-        orderBy: { name: 'asc' },
-    });
-
-    const totalCategories = await prisma.category.count();
+    let categories: any[] = []
+    let totalCategories = 0
+    try {
+        categories = await prisma.category.findMany({
+            include: {
+                children: { include: { _count: { select: { products: true } } } },
+                _count: { select: { products: true } },
+            },
+            where: { parentId: null },
+            orderBy: { name: 'asc' },
+        });
+        totalCategories = await prisma.category.count();
+    } catch (e) {
+        categories = []
+        totalCategories = 0
+    }
 
     return (
         <div className="space-y-6">

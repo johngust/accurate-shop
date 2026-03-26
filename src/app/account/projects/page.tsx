@@ -3,10 +3,14 @@ import Link from 'next/link'
 import { FileSpreadsheet, Plus, ExternalLink, Download } from 'lucide-react'
 
 export default async function ProjectsPage() {
-  // В реальном приложении здесь будет ID текущего пользователя
-  const projects = await prisma.project.findMany({
-    take: 5
-  })
+  let projects: any[] = []
+  try {
+    projects = await prisma.project.findMany({
+      take: 5
+    })
+  } catch (e) {
+    projects = []
+  }
 
   return (
     <div className="bg-surface min-h-screen py-20">

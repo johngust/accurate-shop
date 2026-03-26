@@ -2,10 +2,15 @@ import { prisma } from '@/lib/prisma';
 import { Tag, Plus, Edit, Package } from 'lucide-react';
 
 export default async function AdminBrandsPage() {
-    const brands = await prisma.brand.findMany({
-        include: { _count: { select: { products: true } } },
-        orderBy: { name: 'asc' },
-    });
+    let brands: any[] = []
+    try {
+        brands = await prisma.brand.findMany({
+            include: { _count: { select: { products: true } } },
+            orderBy: { name: 'asc' },
+        });
+    } catch (e) {
+        brands = []
+    }
 
     return (
         <div className="space-y-6">

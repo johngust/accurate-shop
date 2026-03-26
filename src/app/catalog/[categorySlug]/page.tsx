@@ -10,21 +10,8 @@ interface CatalogPageProps {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
+export const runtime = 'edge';
 export const revalidate = 3600;
-
-export async function generateStaticParams() {
-  try {
-    const categories = await prisma.category.findMany({
-      select: { slug: true },
-      take: 20 // Генерируем только топ-20 категорий для ускорения билда
-    });
-    return categories.map((cat) => ({
-      categorySlug: cat.slug,
-    }));
-  } catch (e) {
-    return [];
-  }
-}
 
 export default async function CatalogPage({ params, searchParams }: CatalogPageProps) {
   const { categorySlug } = await params
@@ -50,22 +37,28 @@ export default async function CatalogPage({ params, searchParams }: CatalogPageP
     'price-desc': { name: 'desc' },
   }
 
-  const productsRaw = await prisma.product.findMany({
-    where,
-    include: {
-      brand: true,
-      media: true,
-      variants: true,
-      category: true
-    },
-    orderBy: sortOptions[sort] || { name: 'asc' }
-  })
+  let products: any[] = []
+  let category: any = null
+  try {
+    const productsRaw = await prisma.product.findMany({
+      where,
+      include: {
+        brand: true,
+        media: true,
+        variants: true,
+        category: true
+      },
+      orderBy: sortOptions[sort] || { name: 'asc' }
+    })
+    products = JSON.parse(JSON.stringify(productsRaw))
 
-  const products = JSON.parse(JSON.stringify(productsRaw))
-
-  const category = await prisma.category.findUnique({
-    where: { slug: categorySlug }
-  })
+    category = await prisma.category.findUnique({
+      where: { slug: categorySlug }
+    })
+  } catch (e) {
+    products = []
+    category = null
+  }
 
   if (!category) {
     notFound()

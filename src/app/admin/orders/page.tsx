@@ -2,7 +2,9 @@ import { prisma } from '@/lib/prisma';
 import Link from 'next/link';
 import { ShoppingCart, Clock, CheckCircle, Truck, Package, AlertCircle } from 'lucide-react';
 
-type Props = { searchParams: { status?: string; page?: string } };
+export const runtime = 'edge';
+
+type Props = { searchParams: Promise<{ status?: string; page?: string }> };
 
 const statusConfig: Record<string, { label: string; color: string; border: string; icon: React.ElementType }> = {
     ALL: { label: 'Все', color: 'text-white bg-gray-700', border: 'border-gray-700', icon: ShoppingCart },
@@ -14,30 +16,45 @@ const statusConfig: Record<string, { label: string; color: string; border: strin
 };
 
 export default async function AdminOrdersPage({ searchParams }: Props) {
-    const statusFilter = searchParams.status ?? 'ALL';
-    const page = Number(searchParams.page ?? 1);
+    const resolvedParams = await searchParams;
+    const statusFilter = resolvedParams.status ?? 'ALL';
+    const page = Number(resolvedParams.page ?? 1);
     const perPage = 12;
 
-    const where = statusFilter !== 'ALL' ? { status: statusFilter } : {};
+    let orders: any[] = [];
+    let total = 0;
+    let counts: { status: string; count: number }[] = Object.keys(statusConfig).map(s => ({ status: s, count: 0 }));
+    let totalPages = 0;
 
-    const [orders, total, counts] = await Promise.all([
-        prisma.order.findMany({
-            where,
-            include: { user: true, items: true },
-            orderBy: { id: 'desc' },
-            skip: (page - 1) * perPage,
-            take: perPage,
-        }),
-        prisma.order.count({ where }),
-        Promise.all(
-            Object.keys(statusConfig).map(async (s) => ({
-                status: s,
-                count: s === 'ALL' ? await prisma.order.count() : await prisma.order.count({ where: { status: s } }),
-            }))
-        ),
-    ]);
+    try {
+        const where = statusFilter !== 'ALL' ? { status: statusFilter } : {};
 
-    const totalPages = Math.ceil(total / perPage);
+        const [_orders, _total, _counts] = await Promise.all([
+            prisma.order.findMany({
+                where,
+                include: { user: true, items: true },
+                orderBy: { id: 'desc' },
+                skip: (page - 1) * perPage,
+                take: perPage,
+            }),
+            prisma.order.count({ where }),
+            Promise.all(
+                Object.keys(statusConfig).map(async (s) => ({
+                    status: s,
+                    count: s === 'ALL' ? await prisma.order.count() : await prisma.order.count({ where: { status: s } }),
+                }))
+            ),
+        ]);
+
+        orders = _orders;
+        total = _total;
+        counts = _counts;
+        totalPages = Math.ceil(total / perPage);
+    } catch (e) {
+        orders = [];
+        total = 0;
+        totalPages = 0;
+    }
 
     return (
         <div className="space-y-6">

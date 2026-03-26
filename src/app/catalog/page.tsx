@@ -5,6 +5,7 @@ import SearchInput from '@/components/layout/SearchInput'
 import Link from 'next/link'
 import { ChevronRight, SlidersHorizontal } from 'lucide-react'
 
+export const runtime = 'edge';
 export const revalidate = 0;
 
 interface AllProductsCatalogProps {
@@ -53,18 +54,22 @@ export default async function AllProductsCatalog({ searchParams }: AllProductsCa
     'price-desc': { name: 'desc' },
   }
 
-  const productsRaw = await prisma.product.findMany({
-    where,
-    include: {
-      brand: true,
-      media: true,
-      variants: true,
-      category: true
-    },
-    orderBy: sortOptions[sort] || { name: 'asc' }
-  })
-
-  const products = JSON.parse(JSON.stringify(productsRaw))
+  let products: any[] = []
+  try {
+    const productsRaw = await prisma.product.findMany({
+      where,
+      include: {
+        brand: true,
+        media: true,
+        variants: true,
+        category: true
+      },
+      orderBy: sortOptions[sort] || { name: 'asc' }
+    })
+    products = JSON.parse(JSON.stringify(productsRaw))
+  } catch (e) {
+    products = []
+  }
 
   return (
     <div className="bg-surface min-h-screen">

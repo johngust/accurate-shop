@@ -2,27 +2,33 @@ import { prisma } from '@/lib/prisma';
 import DealsClient from './DealsClient';
 
 export default async function AdminDealsPage() {
-  const deals = (prisma as any).dealOfTheDay 
-    ? await (prisma as any).dealOfTheDay.findMany({
-        include: {
-          product: {
-            include: {
-              brand: true,
-              media: true,
-              variants: true
+  let serializedDeals: any[] = []
+  let products: any[] = []
+  try {
+    const deals = (prisma as any).dealOfTheDay
+      ? await (prisma as any).dealOfTheDay.findMany({
+          include: {
+            product: {
+              include: {
+                brand: true,
+                media: true,
+                variants: true
+              }
             }
           }
-        }
-      })
-    : [];
+        })
+      : [];
 
-  const products = await prisma.product.findMany({
-    select: { id: true, name: true, slug: true },
-    take: 100 // Для поиска
-  });
+    products = await prisma.product.findMany({
+      select: { id: true, name: true, slug: true },
+      take: 100
+    });
 
-  // Преобразуем Decimal в числа для клиентского компонента
-  const serializedDeals = JSON.parse(JSON.stringify(deals));
+    serializedDeals = JSON.parse(JSON.stringify(deals));
+  } catch (e) {
+    serializedDeals = []
+    products = []
+  }
 
   return (
     <div className="space-y-6">
