@@ -3,15 +3,15 @@ compatibility_date = "2024-04-03"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".vercel/output/static"
 
-[[d1_databases]]
-binding = "DB"
-database_name = "accurate-db"
-database_id = "YOUR_DATABASE_ID"
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "accurate-db"
+# database_id = "YOUR_DATABASE_ID"
 
-[[r2_buckets]]
-binding = 'BUCKET'
-bucket_name = 'accurate-media'
+# [[r2_buckets]]
+# binding = 'BUCKET'
+# bucket_name = 'accurate-media'
 
 [[kv_namespaces]]
 binding = "KV"
-id = "YOUR_KV_ID"
+id = "3c6479cdd81e4911ba02eb852da51077"
