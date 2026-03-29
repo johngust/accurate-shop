@@ -1,8 +1,6 @@
 import { NextResponse } from 'next/server';
 import { v4 as uuidv4 } from 'uuid';
 
-export const runtime = "edge";
-
 export async function POST(req: Request) {
   try {
     const formData = await req.formData();
