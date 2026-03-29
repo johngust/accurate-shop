@@ -6,27 +6,28 @@ const globalForPrisma = globalThis as unknown as {
 }
 
 const createPrismaClient = () => {
-  // 1. Проверяем наличие D1 (Cloudflare Runtime / Pages Binding)
+  // 1. Пытаемся получить биндинг D1
   // На Cloudflare Pages биндинг доступен через env.DB или process.env.DB
+  // Мы используем any, так как в разных версиях Next.js он прокидывается по-разному
   const d1 = (process.env as any).DB;
 
   if (d1) {
-    console.log('📡 Инициализация Prisma с адаптером D1');
+    console.log('📡 Инициализация Prisma с адаптером D1 (Cloudflare)');
     try {
       const adapter = new PrismaD1(d1)
       return new PrismaClient({ adapter })
     } catch (e) {
-      console.error('❌ Ошибка при инициализации адаптера D1:', e);
+      console.error('❌ Ошибка при создании PrismaD1 адаптера:', e);
     }
   }
 
-  // 2. FALLBACK: Локальная разработка или Build Time
-  // Если мы в PRODUCTION и здесь оказались - значит D1 не подключен
+  // 2. FALLBACK: Локальная разработка (Node.js runtime)
+  // Здесь мы используем стандартный SQLite драйвер
   if (process.env.NODE_ENV === 'production' && !d1) {
-    console.warn('⚠️ ВНИМАНИЕ: D1 не найден в production. Проверьте биндинги Cloudflare.');
+    console.warn('⚠️ ВНИМАНИЕ: Сайт запущен в production, но база данных D1 не найдена. Проверьте биндинги Cloudflare.');
   }
 
-  console.log('💻 Использование стандартного PrismaClient (SQLite/Postgres)');
+  console.log('💻 Использование стандартного PrismaClient (SQLite/Node.js)');
   return new PrismaClient({
     datasources: {
       db: {

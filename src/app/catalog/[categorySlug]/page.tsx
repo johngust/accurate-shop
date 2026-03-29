@@ -11,7 +11,6 @@ interface CatalogPageProps {
 }
 
 export const revalidate = 3600;
-export const runtime = 'edge';
 
 export default async function CatalogPage({ params, searchParams }: CatalogPageProps) {
   const { categorySlug } = await params

@@ -5,7 +5,6 @@ import SearchInput from '@/components/layout/SearchInput'
 import Link from 'next/link'
 import { ChevronRight, SlidersHorizontal } from 'lucide-react'
 
-export const runtime = 'edge';
 export const revalidate = 0;
 
 interface AllProductsCatalogProps {

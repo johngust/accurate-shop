@@ -9,7 +9,6 @@ interface ProductPageProps {
 }
 
 export const revalidate = 3600;
-export const runtime = 'edge';
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { productSlug } = await params

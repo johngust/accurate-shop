@@ -2,8 +2,6 @@ import { NextResponse } from 'next/server';
 import { v4 as uuidv4 } from 'uuid';
 import { prisma } from '@/lib/prisma';
 
-export const runtime = "edge";
-
 // Оставляем Node.js runtime для работы с Prisma, но используем Response со стримом
 const EXPERIMENTAL_LIMIT = 20;
 const SAFETY_TAG = '[EXPERIMENTAL_BATCH_1]';

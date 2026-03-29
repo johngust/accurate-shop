@@ -19,17 +19,19 @@ export const revalidate = 3600; // Ревалидация раз в час
 export default async function HomePage({ searchParams }: HomePageProps) {
   let products: any[] = []
   try {
-    const productsRaw = await prisma.product.findMany({
-      include: {
-        brand: true,
-        media: true,
-        variants: true,
-        category: true
-      },
-      take: 10,
-      orderBy: { id: 'desc' }
-    })
-    products = JSON.parse(JSON.stringify(productsRaw))
+    if (prisma) {
+      const productsRaw = await prisma.product.findMany({
+        include: {
+          brand: true,
+          media: true,
+          variants: true,
+          category: true
+        },
+        take: 10,
+        orderBy: { id: 'desc' }
+      })
+      products = JSON.parse(JSON.stringify(productsRaw))
+    }
   } catch (e) {
     products = []
   }

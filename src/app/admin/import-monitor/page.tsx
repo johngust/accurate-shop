@@ -3,7 +3,6 @@ import { Activity, CheckCircle, AlertTriangle, XCircle, Package } from 'lucide-r
 
 import { AutoRefresh } from '@/components/admin/AutoRefresh';
 
-export const runtime = 'edge';
 export const revalidate = 0;
 
 export default async function ImportMonitor() {
